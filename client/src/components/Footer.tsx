@@ -43,7 +43,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
             <h3 className="font-heading font-bold text-2xl mb-4">
-              <span className="text-white">Rizwan</span><span className="text-primary">Riyaz</span>
+              <span className="text-white">Rizwan Riyaz</span>
             </h3>
             <p className="text-gray-400 mb-6">
               Web Designer, Data Entry Specialist & Digital Marketing Professional creating efficient and beautiful digital experiences.
