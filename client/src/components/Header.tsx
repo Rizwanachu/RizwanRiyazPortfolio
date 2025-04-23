@@ -38,11 +38,9 @@ const Header = () => {
   return (
     <header className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white/90 backdrop-blur-sm shadow-sm' : 'bg-transparent'}`}>
       <div className="container mx-auto px-4 py-3 flex justify-between items-center">
-        <Link href="/">
-          <a className="font-heading font-bold text-2xl text-primary">
-            <span className="text-dark">Rizwan</span>Riyaz
-          </a>
-        </Link>
+        <div className="font-heading font-bold text-2xl text-primary">
+          <span className="text-dark">Rizwan</span>Riyaz
+        </div>
         
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
