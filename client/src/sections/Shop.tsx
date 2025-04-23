@@ -79,18 +79,18 @@ const Shop = () => {
                   <span className="px-3 py-1 bg-blue-100 text-primary rounded-full text-xs">Home Decor</span>
                 </div>
                 <div className="flex space-x-4">
-                  <a href="#" className="text-secondary hover:text-primary transition-colors">
+                  <a href="https://www.facebook.com/profile.php?id=100093311292280" target="_blank" rel="noopener noreferrer" className="text-secondary hover:text-primary transition-colors">
                     <i className="fab fa-facebook text-xl"></i>
                   </a>
-                  <a href="#" className="text-secondary hover:text-primary transition-colors">
+                  <a href="https://www.instagram.com/glam_gustoz" target="_blank" rel="noopener noreferrer" className="text-secondary hover:text-primary transition-colors">
                     <i className="fab fa-instagram text-xl"></i>
                   </a>
-                  <a href="#" className="text-secondary hover:text-primary transition-colors">
+                  <a href="https://www.pinterest.com/glamgustoz" target="_blank" rel="noopener noreferrer" className="text-secondary hover:text-primary transition-colors">
                     <i className="fab fa-pinterest text-xl"></i>
                   </a>
                 </div>
                 <a 
-                  href="https://www.redbubble.com/people/GlamGustoz/shop" 
+                  href="https://www.redbubble.com/people/Glam-Gustoz/shop?asc=u" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="mt-6 inline-block px-6 py-3 bg-primary text-white font-medium rounded-lg hover:bg-blue-700 transition-colors shadow-md w-full text-center"
@@ -127,13 +127,13 @@ const Shop = () => {
                   <span className="px-3 py-1 bg-blue-100 text-primary rounded-full text-xs">Mugs</span>
                 </div>
                 <div className="flex space-x-4">
-                  <a href="#" className="text-secondary hover:text-primary transition-colors">
+                  <a href="https://www.facebook.com/profile.php?id=100093311292280" target="_blank" rel="noopener noreferrer" className="text-secondary hover:text-primary transition-colors">
                     <i className="fab fa-facebook text-xl"></i>
                   </a>
-                  <a href="#" className="text-secondary hover:text-primary transition-colors">
+                  <a href="https://www.instagram.com/glam_gustoz" target="_blank" rel="noopener noreferrer" className="text-secondary hover:text-primary transition-colors">
                     <i className="fab fa-instagram text-xl"></i>
                   </a>
-                  <a href="#" className="text-secondary hover:text-primary transition-colors">
+                  <a href="https://www.pinterest.com/glamgustoz" target="_blank" rel="noopener noreferrer" className="text-secondary hover:text-primary transition-colors">
                     <i className="fab fa-pinterest text-xl"></i>
                   </a>
                 </div>
@@ -179,7 +179,7 @@ const Shop = () => {
           
           <motion.div variants={itemVariants} className="text-center mt-12">
             <a 
-              href="https://www.redbubble.com/people/GlamGustoz/shop" 
+              href="https://www.redbubble.com/people/Glam-Gustoz/shop?asc=u" 
               target="_blank" 
               rel="noopener noreferrer"
               className="inline-block px-6 py-3 bg-secondary text-white font-medium rounded-lg hover:bg-orange-600 transition-colors shadow-md"

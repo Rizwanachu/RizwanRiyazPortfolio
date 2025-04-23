@@ -176,21 +176,27 @@ const Contact = () => {
                         <i className="fab fa-linkedin-in"></i>
                       </a>
                       <a 
-                        href="#" 
+                        href="https://www.facebook.com/profile.php?id=100093311292280" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
                         className="w-10 h-10 bg-gray-100 text-gray-700 hover:bg-primary hover:text-white rounded-full flex items-center justify-center transition-colors"
                         aria-label="Facebook"
                       >
                         <i className="fab fa-facebook-f"></i>
                       </a>
                       <a 
-                        href="#" 
+                        href="https://www.instagram.com/glam_gustoz" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
                         className="w-10 h-10 bg-gray-100 text-gray-700 hover:bg-primary hover:text-white rounded-full flex items-center justify-center transition-colors"
                         aria-label="Instagram"
                       >
                         <i className="fab fa-instagram"></i>
                       </a>
                       <a 
-                        href="#" 
+                        href="https://www.pinterest.com/glamgustoz" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
                         className="w-10 h-10 bg-gray-100 text-gray-700 hover:bg-primary hover:text-white rounded-full flex items-center justify-center transition-colors"
                         aria-label="Pinterest"
                       >
