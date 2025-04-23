@@ -4,33 +4,53 @@ import { Project, Product, Skill } from './types';
 export const projects: Project[] = [
   {
     id: 1,
-    title: 'Fashion E-commerce Website',
-    description: 'A responsive e-commerce website built with WordPress and WooCommerce.',
-    image: 'https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80',
-    technologies: 'WordPress, WooCommerce',
-    categories: ['Web Design'],
-    tags: ['WordPress', 'E-commerce'],
-    link: '#'
+    title: 'Elmo Blog Website',
+    description: 'A blog website built using AI with clean design and content organization.',
+    image: 'https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80',
+    technologies: 'AI Website Builder, Hocoos',
+    categories: ['Web Design', 'Content Creation'],
+    tags: ['Blog', 'AI'],
+    link: 'https://elmo9671.hocoos.com/'
   },
   {
     id: 2,
-    title: 'Product Launch Campaign',
-    description: 'A comprehensive digital marketing strategy for a new product launch.',
+    title: 'Eleanora E-commerce Store',
+    description: 'An e-commerce platform built with AI featuring product listings and checkout functionality.',
     image: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80',
-    technologies: 'Social Media, Content Strategy',
-    categories: ['Digital Marketing'],
-    tags: ['Marketing', 'Social Media'],
-    link: '#'
+    technologies: 'AI Website Builder, Hocoos',
+    categories: ['Web Design'],
+    tags: ['E-commerce', 'AI'],
+    link: 'https://eleanora4431.hocoos.com/'
   },
   {
     id: 3,
-    title: 'Lifestyle Blog Website',
-    description: 'A minimalist blog design with focus on content readability.',
+    title: 'Glam Gustoz Official Store',
+    description: 'A custom e-commerce store built using Replit featuring product collections.',
+    image: 'https://images.unsplash.com/photo-1523381294911-8d3cead13475?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80',
+    technologies: 'HTML, CSS, JavaScript, Replit',
+    categories: ['Web Design', 'Digital Marketing'],
+    tags: ['E-commerce', 'Replit'],
+    link: 'https://glamgustozofficial.netlify.app/'
+  },
+  {
+    id: 4,
+    title: 'Glam Gustoz Store',
+    description: 'An online shop with custom design and product listings for digital products.',
     image: 'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80',
-    technologies: 'WordPress, Content Creation',
-    categories: ['Web Design', 'Content Creation'],
-    tags: ['WordPress', 'Content'],
-    link: '#'
+    technologies: 'HTML, CSS, JavaScript, Replit',
+    categories: ['Web Design', 'Digital Marketing'],
+    tags: ['E-commerce', 'Replit'],
+    link: 'https://glamgustoz.netlify.app/'
+  },
+  {
+    id: 5,
+    title: 'Triangle House',
+    description: 'An e-commerce store built with Ecwid featuring product collections and secure checkout.',
+    image: 'https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80',
+    technologies: 'Ecwid, E-commerce Tools',
+    categories: ['Web Design', 'Digital Marketing'],
+    tags: ['E-commerce', 'Ecwid'],
+    link: 'https://trianglehouse.company.site/'
   }
 ];
 
