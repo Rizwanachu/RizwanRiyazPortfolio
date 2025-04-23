@@ -45,14 +45,18 @@ const Hero = () => {
               <i className="fab fa-linkedin"></i>
             </a>
             <a 
-              href="#" 
+              href="https://www.facebook.com/rizwanachoo123" 
+              target="_blank" 
+              rel="noopener noreferrer"
               className="text-gray-600 hover:text-primary text-xl transition-colors"
               aria-label="Facebook"
             >
               <i className="fab fa-facebook"></i>
             </a>
             <a 
-              href="#" 
+              href="https://www.instagram.com/_.rizwanachu123._?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" 
+              target="_blank" 
+              rel="noopener noreferrer"
               className="text-gray-600 hover:text-primary text-xl transition-colors"
               aria-label="Instagram"
             >

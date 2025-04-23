@@ -139,15 +139,7 @@ const Contact = () => {
                   </div>
                 </div>
                 
-                <div className="flex items-start">
-                  <div className="w-12 h-12 bg-primary/10 text-primary rounded-full flex items-center justify-center mr-4 shrink-0">
-                    <i className="fas fa-phone-alt"></i>
-                  </div>
-                  <div>
-                    <h4 className="font-medium text-lg mb-1">Phone</h4>
-                    <a href="tel:+917356856485" className="text-primary hover:underline">+91 7356856485</a>
-                  </div>
-                </div>
+
                 
                 <div className="flex items-start">
                   <div className="w-12 h-12 bg-primary/10 text-primary rounded-full flex items-center justify-center mr-4 shrink-0">
@@ -193,15 +185,7 @@ const Contact = () => {
                       >
                         <i className="fab fa-instagram"></i>
                       </a>
-                      <a 
-                        href="https://www.pinterest.com/glamgustoz" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="w-10 h-10 bg-gray-100 text-gray-700 hover:bg-primary hover:text-white rounded-full flex items-center justify-center transition-colors"
-                        aria-label="Pinterest"
-                      >
-                        <i className="fab fa-pinterest-p"></i>
-                      </a>
+
                     </div>
                   </div>
                 </div>

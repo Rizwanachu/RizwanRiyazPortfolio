@@ -75,13 +75,7 @@ const About = () => {
                   <p className="font-medium"><i className="far fa-envelope mr-2 text-primary"></i> rizwanriyaz321@gmail.com</p>
                 </motion.div>
                 <motion.div variants={itemVariants}>
-                  <p className="font-medium"><i className="fas fa-phone-alt mr-2 text-primary"></i> +91 7356856485</p>
-                </motion.div>
-                <motion.div variants={itemVariants}>
-                  <p className="font-medium"><i className="fas fa-map-marker-alt mr-2 text-primary"></i> India</p>
-                </motion.div>
-                <motion.div variants={itemVariants}>
-                  <p className="font-medium"><i className="fas fa-graduation-cap mr-2 text-primary"></i> Computer Science</p>
+                  <p className="font-medium"><i className="fas fa-map-marker-alt mr-2 text-primary"></i> Kochi, Kerala, India</p>
                 </motion.div>
               </motion.div>
               

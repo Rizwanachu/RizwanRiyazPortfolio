@@ -59,14 +59,18 @@ const Footer = () => {
                 <i className="fab fa-linkedin-in"></i>
               </a>
               <a 
-                href="#" 
+                href="https://www.facebook.com/rizwanachoo123" 
+                target="_blank" 
+                rel="noopener noreferrer"
                 className="w-10 h-10 bg-gray-800 hover:bg-primary rounded-full flex items-center justify-center transition-colors"
                 aria-label="Facebook"
               >
                 <i className="fab fa-facebook-f"></i>
               </a>
               <a 
-                href="#" 
+                href="https://www.instagram.com/_.rizwanachu123._?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" 
+                target="_blank" 
+                rel="noopener noreferrer"
                 className="w-10 h-10 bg-gray-800 hover:bg-primary rounded-full flex items-center justify-center transition-colors"
                 aria-label="Instagram"
               >
@@ -100,7 +104,7 @@ const Footer = () => {
                   <path d="M12 6c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm0 10c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4z"/>
                 </svg>
                 <a 
-                  href="https://www.redbubble.com/people/GlamGustoz/shop" 
+                  href="https://www.redbubble.com/people/Glam-Gustoz/shop?asc=u" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="text-gray-400 hover:text-white transition-colors"
