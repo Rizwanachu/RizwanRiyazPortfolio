@@ -1,13 +1,46 @@
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 import { Button } from '@/components/ui/button';
-import resumePdf from '@assets/Rizwan Riyaz Resume (1).pdf';
+import { Document, Page, pdfjs } from 'react-pdf';
+import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
+import 'react-pdf/dist/esm/Page/TextLayer.css';
+
+// Set the worker source for react-pdf
+pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.js`;
+
+// In development, use the imported PDF
+// In production, use the path to the deployed asset
+const resumePdfPath = import.meta.env.DEV 
+  ? '/src/assets/Rizwan Riyaz Resume (1).pdf'
+  : '/assets/Rizwan Riyaz Resume (1).pdf';
 
 const Resume = () => {
   const controls = useAnimation();
   const ref = useRef<HTMLDivElement>(null);
   const inView = useIntersectionObserver(ref, { threshold: 0.1 });
+  const [numPages, setNumPages] = useState<number | null>(null);
+  const [pageNumber, setPageNumber] = useState<number>(1);
+  const [showPdfViewer, setShowPdfViewer] = useState<boolean>(false);
+  
+  function onDocumentLoadSuccess({ numPages }: { numPages: number }): void {
+    setNumPages(numPages);
+  }
+
+  function changePage(offset: number): void {
+    setPageNumber(prevPageNumber => {
+      const newPageNumber = prevPageNumber + offset;
+      return newPageNumber > 0 && newPageNumber <= (numPages || 1) ? newPageNumber : prevPageNumber;
+    });
+  }
+
+  function previousPage(): void {
+    changePage(-1);
+  }
+
+  function nextPage(): void {
+    changePage(1);
+  }
   
   useEffect(() => {
     if (inView) {
@@ -62,13 +95,71 @@ const Resume = () => {
             <div className="w-20 h-1 bg-primary mx-auto"></div>
           </motion.div>
           
-          <motion.div variants={itemVariants} className="flex justify-center mb-10">
-            <Button asChild>
-              <a href={resumePdf} download className="px-6 py-3 bg-primary text-white font-medium rounded-lg hover:bg-blue-700 transition-colors shadow-md flex items-center">
+          <motion.div variants={itemVariants} className="flex flex-wrap justify-center gap-4 mb-10">
+            <Button className="px-6 py-3 bg-primary text-white font-medium rounded-lg hover:bg-blue-700 transition-colors shadow-md flex items-center">
+              <a href={resumePdfPath} download="Rizwan_Riyaz_Resume.pdf" className="text-white flex items-center">
                 <i className="fas fa-download mr-2"></i> Download Resume
               </a>
             </Button>
+            
+            <Button 
+              variant="outline" 
+              onClick={() => setShowPdfViewer(!showPdfViewer)} 
+              className="px-6 py-3 font-medium rounded-lg shadow-md flex items-center"
+            >
+              <i className={`fas ${showPdfViewer ? 'fa-eye-slash' : 'fa-eye'} mr-2`}></i>
+              {showPdfViewer ? 'Hide Resume' : 'View Resume'}
+            </Button>
           </motion.div>
+          
+          {/* PDF Viewer */}
+          {showPdfViewer && (
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="mb-16 mx-auto max-w-4xl bg-white p-4 rounded-lg shadow-lg"
+            >
+              <div className="flex flex-col items-center">
+                <Document
+                  file={resumePdfPath}
+                  onLoadSuccess={onDocumentLoadSuccess}
+                  className="w-full"
+                >
+                  <Page 
+                    pageNumber={pageNumber} 
+                    width={Math.min(window.innerWidth * 0.8, 800)} 
+                    renderTextLayer={true}
+                    renderAnnotationLayer={true}
+                  />
+                </Document>
+                
+                <div className="flex items-center justify-between w-full max-w-md mt-4">
+                  <Button 
+                    onClick={previousPage} 
+                    disabled={pageNumber <= 1}
+                    variant="outline"
+                    size="sm"
+                  >
+                    <i className="fas fa-chevron-left mr-2"></i> Previous
+                  </Button>
+                  
+                  <p className="text-center">
+                    Page {pageNumber} of {numPages || '-'}
+                  </p>
+                  
+                  <Button 
+                    onClick={nextPage} 
+                    disabled={numPages !== null && pageNumber >= numPages}
+                    variant="outline"
+                    size="sm"
+                  >
+                    Next <i className="fas fa-chevron-right ml-2"></i>
+                  </Button>
+                </div>
+              </div>
+            </motion.div>
+          )}
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
             {/* Experience */}
