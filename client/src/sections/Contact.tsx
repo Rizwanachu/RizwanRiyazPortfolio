@@ -48,7 +48,24 @@ const Contact = () => {
     setIsSubmitting(true);
     
     try {
-      await apiRequest('POST', '/api/contact', data);
+      // Use Netlify function endpoint for deployment
+      const apiEndpoint = import.meta.env.DEV 
+        ? '/api/contact' 
+        : '/.netlify/functions/contactform';
+        
+      const response = await fetch(apiEndpoint, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+      
+      const result = await response.json();
+      
+      if (!response.ok) {
+        throw new Error(result.message || 'Failed to send message');
+      }
       
       toast({
         title: 'Message sent!',
