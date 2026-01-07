@@ -91,13 +91,25 @@ const Resume = () => {
                 {/* Experience 1 */}
                 <div className="border-l-2 border-blue-600/30 pl-8 relative">
                   <div className="absolute w-4 h-4 bg-blue-600 rounded-full -left-[9px] top-0 shadow-[0_0_15px_rgba(37,99,235,0.8)]"></div>
-                  <h4 className="font-heading font-bold text-2xl text-white mb-1 tracking-tight">Data Strategy & Translation</h4>
-                  <p className="text-blue-400 font-medium mb-2 tracking-wide text-sm uppercase">Space Dot Private Limited</p>
-                  <p className="text-gray-500 font-bold mb-4 text-xs tracking-widest uppercase">2024 — Present</p>
+                  <h4 className="font-heading font-bold text-2xl text-white mb-1 tracking-tight">Web Designer & Digital Marketer</h4>
+                  <p className="text-blue-400 font-medium mb-2 tracking-wide text-sm uppercase">Glam Gustoz</p>
+                  <p className="text-gray-500 font-bold mb-4 text-xs tracking-widest uppercase">04/2023 — Present</p>
                   <ul className="text-gray-400 space-y-4 font-light leading-relaxed">
                     <li className="flex items-start">
                       <span className="text-blue-500 mr-3">/</span>
-                      <span>High-precision data architecture and multi-format translation efficiency.</span>
+                      <span>Designed and managed WordPress and WooCommerce websites for personal brands and e-commerce clients.</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-blue-500 mr-3">/</span>
+                      <span>Founded Glam Gustoz, a self-care and fashion brand merging mental health awareness with modern design.</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-blue-500 mr-3">/</span>
+                      <span>Improved SEO, load speed, and overall website performance by 20% using Airlift Software.</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-blue-500 mr-3">/</span>
+                      <span>Planned and executed Google-certified digital marketing campaigns across search and social platforms.</span>
                     </li>
                   </ul>
                 </div>
@@ -111,7 +123,15 @@ const Resume = () => {
                   <ul className="text-gray-400 space-y-4 font-light leading-relaxed">
                     <li className="flex items-start">
                       <span className="text-blue-500 mr-3">/</span>
-                      <span>Reduced repeat complaints by 25% through high-precision record management.</span>
+                      <span>Managing billing, pricing, and client records while ensuring compliance and accuracy.</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-blue-500 mr-3">/</span>
+                      <span>Strengthened customer relationships leading to a 25% reduction in repeat complaints.</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-blue-500 mr-3">/</span>
+                      <span>Reduced acquisition costs through effective negotiation and pricing adjustment.</span>
                     </li>
                   </ul>
                 </div>
