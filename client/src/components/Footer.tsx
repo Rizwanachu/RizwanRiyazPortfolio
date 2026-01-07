@@ -128,25 +128,6 @@ const Footer = () => {
               </li>
             </ul>
             
-            <div className="mt-6">
-              <h4 className="font-heading font-semibold text-xl mb-4">Newsletter</h4>
-              <form onSubmit={handleNewsletterSubmit} className="flex">
-                <input 
-                  type="email" 
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Your email" 
-                  className="p-2 rounded-l-lg w-full focus:outline-none text-gray-800"
-                />
-                <button 
-                  type="submit" 
-                  className="bg-primary hover:bg-blue-700 px-4 rounded-r-lg transition-colors"
-                  aria-label="Subscribe"
-                >
-                  <i className="fas fa-paper-plane"></i>
-                </button>
-              </form>
-            </div>
           </div>
         </div>
         
