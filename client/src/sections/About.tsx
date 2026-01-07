@@ -36,7 +36,7 @@ const About = () => {
   return (
     <section id="about" className="py-24 md:py-32 bg-[#0a0a0c] relative overflow-hidden" ref={ref}>
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-600/5 rounded-full blur-[120px] -z-10"></div>
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-6 md:px-12 lg:px-24">
         <motion.div
           variants={containerVariants}
           initial="hidden"

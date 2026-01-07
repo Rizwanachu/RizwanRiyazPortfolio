@@ -50,7 +50,7 @@ const Skills = () => {
   return (
     <section id="skills" className="py-24 md:py-32 bg-[#08080a] skills-section relative overflow-hidden" ref={ref}>
       <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-purple-600/5 rounded-full blur-[150px] -z-10"></div>
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-6 md:px-12 lg:px-24">
         <motion.div
           variants={containerVariants}
           initial="hidden"

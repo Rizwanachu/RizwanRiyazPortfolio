@@ -54,7 +54,7 @@ const Portfolio = () => {
 
   return (
     <section id="portfolio" className="py-24 md:py-32 bg-[#0a0a0c]" ref={ref}>
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-6 md:px-12 lg:px-24">
         <motion.div
           variants={containerVariants}
           initial="hidden"

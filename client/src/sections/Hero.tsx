@@ -39,7 +39,7 @@ const Hero = () => {
           className="absolute -bottom-[20%] -right-[10%] w-[60%] h-[60%] bg-purple-600/10 rounded-full blur-[120px]" 
         />
       </div>
-      <div className="container mx-auto px-4 flex flex-col md:flex-row items-center relative z-10">
+      <div className="container mx-auto px-6 md:px-12 lg:px-24 flex flex-col md:flex-row items-center relative z-10">
         <motion.div 
           className="md:w-1/2 mb-10 md:mb-0"
           initial={ { opacity: 0, x: -50 } }

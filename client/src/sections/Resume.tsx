@@ -53,7 +53,7 @@ const Resume = () => {
   return (
     <section id="resume" className="py-24 md:py-32 bg-[#0a0a0c] relative" ref={ref}>
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-blue-600/5 rounded-full blur-[150px] -z-10"></div>
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto px-6 md:px-12 lg:px-24 relative z-10">
         <motion.div
           variants={containerVariants}
           initial="hidden"

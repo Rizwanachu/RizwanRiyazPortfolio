@@ -109,7 +109,7 @@ const Contact = () => {
   return (
     <section id="contact" className="py-24 md:py-32 bg-[#08080a] relative" ref={ref}>
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(59,130,246,0.1),transparent_50%)]"></div>
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto px-6 md:px-12 lg:px-24 relative z-10">
         <motion.div
           variants={containerVariants}
           initial="hidden"
