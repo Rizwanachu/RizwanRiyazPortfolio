@@ -193,22 +193,22 @@ const Contact = () => {
             </motion.div>
             
             {/* Contact Form */}
-            <motion.div variants={itemVariants} className="lg:col-span-3 bg-white p-8 rounded-lg shadow-custom">
-              <h3 className="font-heading font-semibold text-2xl mb-6">Send a Message</h3>
+            <motion.div variants={itemVariants} className="lg:col-span-3 glass-morphism p-10 rounded-3xl border border-white/5">
+              <h3 className="font-heading font-semibold text-3xl mb-10 text-white tracking-tight">Send a Message</h3>
               
               <Form {...form}>
-                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <FormField
                       control={form.control}
                       name="name"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel className="text-gray-700 font-medium">Your Name</FormLabel>
+                          <FormLabel className="text-gray-400 font-medium text-sm uppercase tracking-widest mb-3 block">Your Name</FormLabel>
                           <FormControl>
                             <Input 
                               placeholder="John Doe" 
-                              className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-colors"
+                              className="w-full p-4 bg-black/40 border-white/10 rounded-2xl focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500/50 transition-all text-white placeholder:text-gray-600 h-14"
                               {...field} 
                             />
                           </FormControl>
@@ -222,11 +222,11 @@ const Contact = () => {
                       name="email"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel className="text-gray-700 font-medium">Your Email</FormLabel>
+                          <FormLabel className="text-gray-400 font-medium text-sm uppercase tracking-widest mb-3 block">Your Email</FormLabel>
                           <FormControl>
                             <Input 
                               placeholder="john@example.com" 
-                              className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-colors"
+                              className="w-full p-4 bg-black/40 border-white/10 rounded-2xl focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500/50 transition-all text-white placeholder:text-gray-600 h-14"
                               {...field} 
                             />
                           </FormControl>
@@ -241,11 +241,11 @@ const Contact = () => {
                     name="subject"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="text-gray-700 font-medium">Subject</FormLabel>
+                        <FormLabel className="text-gray-400 font-medium text-sm uppercase tracking-widest mb-3 block">Subject</FormLabel>
                         <FormControl>
                           <Input 
                             placeholder="Project Inquiry" 
-                            className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-colors"
+                            className="w-full p-4 bg-black/40 border-white/10 rounded-2xl focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500/50 transition-all text-white placeholder:text-gray-600 h-14"
                             {...field} 
                           />
                         </FormControl>
@@ -259,11 +259,11 @@ const Contact = () => {
                     name="message"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="text-gray-700 font-medium">Your Message</FormLabel>
+                        <FormLabel className="text-gray-400 font-medium text-sm uppercase tracking-widest mb-3 block">Your Message</FormLabel>
                         <FormControl>
                           <Textarea 
                             placeholder="Hello, I'd like to discuss a project..." 
-                            className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-colors min-h-[120px]"
+                            className="w-full p-4 bg-black/40 border-white/10 rounded-2xl focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500/50 transition-all text-white placeholder:text-gray-600 min-h-[180px] resize-none"
                             {...field} 
                           />
                         </FormControl>
@@ -272,17 +272,22 @@ const Contact = () => {
                     )}
                   />
                   
-                  <Button 
-                    type="submit" 
-                    disabled={isSubmitting}
-                    className="w-full md:w-auto px-8 py-3 bg-primary text-white font-medium rounded-lg hover:bg-blue-700 transition-colors shadow-md"
+                  <motion.div
+                    whileHover={ { scale: 1.02 } }
+                    whileTap={ { scale: 0.98 } }
                   >
-                    {isSubmitting ? 'Sending...' : (
-                      <>
-                        Send Message <i className="fas fa-paper-plane ml-2"></i>
-                      </>
-                    )}
-                  </Button>
+                    <Button 
+                      type="submit" 
+                      disabled={isSubmitting}
+                      className="w-full md:w-auto px-10 py-7 bg-blue-600 text-white font-bold rounded-2xl hover:bg-blue-700 transition-all shadow-[0_0_30px_rgba(37,99,235,0.3)] flex items-center gap-3 border border-blue-400/20 uppercase tracking-widest text-xs"
+                    >
+                      {isSubmitting ? 'Processing Signal...' : (
+                        <>
+                          Send Message <i className="fas fa-paper-plane ml-2"></i>
+                        </>
+                      )}
+                    </Button>
+                  </motion.div>
                 </form>
               </Form>
             </motion.div>
