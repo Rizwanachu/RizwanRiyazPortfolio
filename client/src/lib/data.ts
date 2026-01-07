@@ -4,6 +4,36 @@ import { Project, Product, Skill } from './types';
 export const projects: Project[] = [
   {
     id: 1,
+    title: 'Aeuro Aviators',
+    description: 'A professional aviation-focused platform featuring advanced digital infrastructure and clean design.',
+    image: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80',
+    technologies: 'React, Tailwind, Framer Motion',
+    categories: ['Web Design', 'Digital Marketing'],
+    tags: ['Aviation', 'Premium'],
+    link: 'https://aeuroaviators.netlify.app'
+  },
+  {
+    id: 2,
+    title: 'Glam Gustoz',
+    description: 'Official premium digital hub for the Glam Gustoz brand, featuring integrated e-commerce capabilities.',
+    image: 'https://images.unsplash.com/photo-1523381294911-8d3cead13475?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80',
+    technologies: 'React, Node.js, Cloudflare',
+    categories: ['Web Design', 'Digital Marketing'],
+    tags: ['E-commerce', 'Brand'],
+    link: 'https://glamgustoz.com'
+  },
+  {
+    id: 3,
+    title: 'Spendory Track',
+    description: 'A high-performance financial tracking utility designed for structural efficiency and user precision.',
+    image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80',
+    technologies: 'Full-stack Development, Analytics',
+    categories: ['Web Design'],
+    tags: ['FinTech', 'Tool'],
+    link: 'https://spendorytrack.com'
+  },
+  {
+    id: 4,
     title: 'Elmo Blog Website',
     description: 'A blog website built using AI with clean design and content organization.',
     image: 'https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80',
@@ -11,46 +41,6 @@ export const projects: Project[] = [
     categories: ['Web Design', 'Content Creation'],
     tags: ['Blog', 'AI'],
     link: 'https://elmo9671.hocoos.com/'
-  },
-  {
-    id: 2,
-    title: 'Eleanora E-commerce Store',
-    description: 'An e-commerce platform built with AI featuring product listings and checkout functionality.',
-    image: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80',
-    technologies: 'AI Website Builder, Hocoos',
-    categories: ['Web Design'],
-    tags: ['E-commerce', 'AI'],
-    link: 'https://eleanora4431.hocoos.com/'
-  },
-  {
-    id: 3,
-    title: 'Glam Gustoz Official Store',
-    description: 'A custom e-commerce store built using Replit featuring product collections.',
-    image: 'https://images.unsplash.com/photo-1523381294911-8d3cead13475?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80',
-    technologies: 'HTML, CSS, JavaScript, Replit',
-    categories: ['Web Design', 'Digital Marketing'],
-    tags: ['E-commerce', 'Replit'],
-    link: 'https://glamgustozofficial.netlify.app/'
-  },
-  {
-    id: 4,
-    title: 'Glam Gustoz Store',
-    description: 'An online shop with custom design and product listings for digital products.',
-    image: 'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80',
-    technologies: 'HTML, CSS, JavaScript, Replit',
-    categories: ['Web Design', 'Digital Marketing'],
-    tags: ['E-commerce', 'Replit'],
-    link: 'https://glamgustoz.netlify.app/'
-  },
-  {
-    id: 5,
-    title: 'Triangle House',
-    description: 'An e-commerce store built with Ecwid featuring product collections and secure checkout.',
-    image: 'https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80',
-    technologies: 'Ecwid, E-commerce Tools',
-    categories: ['Web Design', 'Digital Marketing'],
-    tags: ['E-commerce', 'Ecwid'],
-    link: 'https://trianglehouse.company.site/'
   }
 ];
 
