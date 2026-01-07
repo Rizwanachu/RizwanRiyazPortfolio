@@ -47,10 +47,10 @@ const About = () => {
             <div className="w-24 h-1.5 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto rounded-full"></div>
           </motion.div>
           
-          <div className="flex flex-col md:flex-row gap-20 items-center">
+          <div className="flex flex-col md:flex-row gap-12 md:gap-20 items-center">
             <motion.div 
               variants={itemVariants} 
-              className="md:w-1/2 perspective-1000"
+              className="w-full md:w-1/2 perspective-1000"
             >
               <div className="card-3d p-2 rounded-2xl">
                 <img 

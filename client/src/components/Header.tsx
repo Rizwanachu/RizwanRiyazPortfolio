@@ -62,10 +62,10 @@ const Header = () => {
         {/* Mobile Menu Button */}
         <button 
           onClick={toggleMenu}
-          className="md:hidden text-dark focus:outline-none"
+          className="md:hidden text-white focus:outline-none p-2"
           aria-label="Toggle menu"
         >
-          <i className="fas fa-bars text-xl"></i>
+          <i className={`fas ${isMenuOpen ? 'fa-times' : 'fa-bars'} text-2xl transition-all`}></i>
         </button>
       </div>
       
@@ -77,14 +77,14 @@ const Header = () => {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden bg-white w-full shadow-md"
+            className="md:hidden bg-[#0a0a0c]/95 backdrop-blur-2xl border-b border-white/5 overflow-hidden"
           >
-            <div className="container mx-auto px-4 py-3 flex flex-col space-y-4">
+            <div className="container mx-auto px-6 py-8 flex flex-col space-y-6">
               {navLinks.map((link) => (
                 <a 
                   key={link.name}
                   href={link.href} 
-                  className="font-medium py-2 hover:text-primary transition-colors"
+                  className="font-heading font-medium text-xl text-gray-300 hover:text-blue-400 transition-colors py-2 border-b border-white/5 last:border-0"
                   onClick={closeMenu}
                 >
                   {link.name}

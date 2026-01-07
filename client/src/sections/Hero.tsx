@@ -58,12 +58,12 @@ const Hero = () => {
           </motion.div>
           
           <motion.h2 
-            className="text-2xl md:text-3xl text-gray-400 mb-8 font-light tracking-wide"
+            className="text-xl md:text-3xl text-gray-400 mb-8 font-light tracking-wide leading-relaxed"
             initial={ { opacity: 0, y: 20 } }
             animate={ { opacity: 1, y: 0 } }
             transition={ { delay: 0.4, duration: 0.6 } }
           >
-            Web Designer <span className="text-blue-500 mx-2">|</span> Digital Marketing & Social Media Manager <span className="text-blue-500 mx-2">|</span> Data Entry Specialist <span className="text-blue-500 mx-2">|</span> Certified in Google Digital Marketing & E-Commerce
+            Web Designer <span className="text-blue-500 mx-2 hidden sm:inline">|</span> <br className="sm:hidden" /> Digital Marketing & Social Media Manager <span className="text-blue-500 mx-2 hidden sm:inline">|</span> <br className="sm:hidden" /> Data Entry Specialist <span className="text-blue-500 mx-2 hidden sm:inline">|</span> <br className="sm:hidden" /> Certified in Google Digital Marketing & E-Commerce
           </motion.h2>
           
           <motion.p 
