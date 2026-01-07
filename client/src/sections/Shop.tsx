@@ -1,7 +1,6 @@
 import { useRef, useEffect } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
-import { featuredProducts } from '@/lib/data';
 
 const Shop = () => {
   const controls = useAnimation();
@@ -147,45 +146,6 @@ const Shop = () => {
               </div>
             </motion.div>
           </div>
-          
-          {/* Featured Products */}
-          <motion.div variants={itemVariants} className="mt-16">
-            <h3 className="font-heading font-semibold text-2xl mb-8 text-center">Featured Products</h3>
-            
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {featuredProducts.map((product, index) => (
-                <motion.div 
-                  key={index}
-                  variants={itemVariants}
-                  className="bg-white rounded-lg shadow-sm overflow-hidden card-hover"
-                >
-                  <div className="h-44 overflow-hidden">
-                    <img 
-                      src={product.image} 
-                      alt={product.name} 
-                      className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
-                    />
-                  </div>
-                  <div className="p-4">
-                    <h4 className="font-medium text-base mb-1">{product.name}</h4>
-                    <p className="text-gray-500 text-sm mb-2">{product.store}</p>
-                    <p className="text-primary font-medium">{product.price}</p>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-          
-          <motion.div variants={itemVariants} className="text-center mt-12">
-            <a 
-              href="https://www.redbubble.com/people/Glam-Gustoz/shop?asc=u" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="inline-block px-6 py-3 bg-secondary text-white font-medium rounded-lg hover:bg-orange-600 transition-colors shadow-md"
-            >
-              Explore All Products <i className="fas fa-arrow-right ml-2"></i>
-            </a>
-          </motion.div>
         </motion.div>
       </div>
     </section>
