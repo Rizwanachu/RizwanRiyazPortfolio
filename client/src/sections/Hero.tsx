@@ -39,7 +39,6 @@ const Hero = () => {
           className="absolute -bottom-[20%] -right-[10%] w-[60%] h-[60%] bg-purple-600/10 rounded-full blur-[120px]" 
         />
       </div>
-
       <div className="container mx-auto px-4 flex flex-col md:flex-row items-center relative z-10">
         <motion.div 
           className="md:w-1/2 mb-10 md:mb-0"
@@ -155,7 +154,7 @@ const Hero = () => {
                 className="absolute -right-4 top-10 bg-white p-3 rounded-2xl shadow-xl z-20 flex items-center gap-2"
               >
                 <div className="w-3 h-3 bg-green-500 rounded-full animate-ping"></div>
-                <span className="text-sm font-bold">Available for Hire</span>
+                <span className="text-sm font-bold text-[#292a31]">Available for Hire</span>
               </motion.div>
             </div>
           </motion.div>
