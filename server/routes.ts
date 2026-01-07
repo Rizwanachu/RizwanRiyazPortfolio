@@ -5,8 +5,18 @@ import { contactFormSchema } from "@shared/schema";
 import { z } from "zod";
 import path from "path";
 import fs from "fs";
+import nodemailer from "nodemailer";
 
 export async function registerRoutes(app: Express): Promise<Server> {
+  // Email transporter configuration
+  const transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+      user: process.env.EMAIL_USER,
+      pass: process.env.EMAIL_PASS
+    }
+  });
+
   // Serve files from attached_assets
   app.get('/api/resume', async (_req, res) => {
     const filePath = path.resolve(process.cwd(), 'attached_assets', 'RIZWAN_RIYAZ_RESUME_2026_1767816929258.pdf');
@@ -25,16 +35,33 @@ export async function registerRoutes(app: Express): Promise<Server> {
       // Validate form data
       const validatedData = contactFormSchema.parse(req.body);
       
-      // In a real implementation, you might:
-      // 1. Store in database
-      // 2. Send email notification
-      // 3. Set up auto-responder
-      
-      // For now we'll just log it
-      console.log('Contact form submission:', validatedData);
-      
       // Save to storage
       await storage.saveContactSubmission(validatedData);
+
+      // Send email notification
+      const mailOptions = {
+        from: process.env.EMAIL_USER,
+        to: 'rizwanriyaz321@gmail.com',
+        subject: `New Contact Form Submission from ${validatedData.name}`,
+        text: `
+          Name: ${validatedData.name}
+          Email: ${validatedData.email}
+          Subject: ${validatedData.subject || 'N/A'}
+          Message: ${validatedData.message}
+        `
+      };
+
+      if (process.env.EMAIL_USER && process.env.EMAIL_PASS) {
+        try {
+          await transporter.sendMail(mailOptions);
+          console.log('Email notification sent to rizwanriyaz321@gmail.com');
+        } catch (emailError) {
+          console.error('Failed to send email notification:', emailError);
+          // We still return success as the submission was saved to DB
+        }
+      } else {
+        console.warn('Email credentials not provided, skipping email notification');
+      }
       
       res.status(200).json({ 
         success: true, 
