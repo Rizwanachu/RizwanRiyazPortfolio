@@ -63,7 +63,7 @@ const Hero = () => {
             animate={ { opacity: 1, y: 0 } }
             transition={ { delay: 0.4, duration: 0.6 } }
           >
-            Web Architect <span className="text-blue-500 mx-2">|</span> Data Strategist <span className="text-blue-500 mx-2">|</span> Digital Growth Expert
+            Web Designer <span className="text-blue-500 mx-2">|</span> Digital Marketing & Social Media Manager <span className="text-blue-500 mx-2">|</span> Data Entry Specialist <span className="text-blue-500 mx-2">|</span> Certified in Google Digital Marketing & E-Commerce
           </motion.h2>
           
           <motion.p 
