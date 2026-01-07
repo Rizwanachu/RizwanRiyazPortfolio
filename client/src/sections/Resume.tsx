@@ -6,8 +6,8 @@ import { Button } from '@/components/ui/button';
 // In development, use the imported PDF
 // In production, use the path to the deployed asset
 const resumePdfPath = import.meta.env.DEV 
-  ? '/src/assets/Rizwan Riyaz Resume (1).pdf'
-  : '/assets/Rizwan Riyaz Resume (1).pdf';
+  ? '/attached_assets/RIZWAN_RIYAZ_RESUME_2026_1767816929258.pdf'
+  : '/attached_assets/RIZWAN_RIYAZ_RESUME_2026_1767816929258.pdf';
 
 const Resume = () => {
   const controls = useAnimation();
@@ -73,7 +73,7 @@ const Resume = () => {
               whileTap={ { scale: 0.95 } }
             >
               <Button className="px-10 py-6 bg-blue-600 text-white font-bold rounded-2xl hover:bg-blue-700 transition-all shadow-[0_0_30px_rgba(37,99,235,0.3)] flex items-center gap-3 border border-blue-400/20 uppercase tracking-widest text-xs">
-                <a href={resumePdfPath} download="Rizwan_Riyaz_Resume.pdf" className="text-white flex items-center">
+                <a href={resumePdfPath} download="RIZWAN_RIYAZ_RESUME_2026.pdf" className="text-white flex items-center">
                   <i className="fas fa-download mr-2"></i> Download Dossier
                 </a>
               </Button>
