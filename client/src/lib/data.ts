@@ -46,11 +46,12 @@ export const projects: Project[] = [
 
 // Technical skills
 export const technicalSkills: Skill[] = [
+  { name: 'Web Design', percentage: 95 },
+  { name: 'SEO', percentage: 90 },
   { name: 'WordPress', percentage: 95 },
-  { name: 'Microsoft Word', percentage: 90 },
-  { name: 'Microsoft Excel', percentage: 85 },
-  { name: 'Python', percentage: 75 },
-  { name: 'Digital Marketing', percentage: 80 }
+  { name: 'WooCommerce', percentage: 90 },
+  { name: 'Google Ads', percentage: 85 },
+  { name: 'Google Analytics', percentage: 80 }
 ];
 
 // Soft skills

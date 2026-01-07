@@ -106,27 +106,15 @@ const Resume = () => {
                 </div>
                 
                 {/* Experience 2 */}
-                <div className="border-l-4 border-primary pl-5 relative">
-                  <div className="absolute w-4 h-4 bg-primary rounded-full -left-[10px] top-0"></div>
-                  <h4 className="font-heading font-medium text-xl">Billing Executive</h4>
-                  <p className="text-gray-600 mb-1">Oh Baby, India</p>
-                  <p className="text-primary font-medium mb-3">Jun 2021 - Mar 2023</p>
-                  <ul className="text-gray-700 space-y-2">
+                <div className="border-l-2 border-blue-600/30 pl-8 relative">
+                  <div className="absolute w-4 h-4 bg-blue-600 rounded-full -left-[9px] top-0 shadow-[0_0_15px_rgba(37,99,235,0.8)]"></div>
+                  <h4 className="font-heading font-bold text-2xl text-white mb-1 tracking-tight">Billing Executive</h4>
+                  <p className="text-blue-400 font-medium mb-2 tracking-wide text-sm uppercase">Oh Baby</p>
+                  <p className="text-gray-500 font-bold mb-4 text-xs tracking-widest uppercase">Jun 2021 — Mar 2023</p>
+                  <ul className="text-gray-400 space-y-4 font-light leading-relaxed">
                     <li className="flex items-start">
-                      <i className="fas fa-check-circle text-success mt-1 mr-2"></i>
-                      <span>Built and strengthened long-lasting client relationships based on accurate price quotes and customer-centric terms.</span>
-                    </li>
-                    <li className="flex items-start">
-                      <i className="fas fa-check-circle text-success mt-1 mr-2"></i>
-                      <span>Addressed problems with accounting, billing, and service delivery to maintain and enhance client satisfaction.</span>
-                    </li>
-                    <li className="flex items-start">
-                      <i className="fas fa-check-circle text-success mt-1 mr-2"></i>
-                      <span>Skilled in preparing periodic financial reports to track income and expenses.</span>
-                    </li>
-                    <li className="flex items-start">
-                      <i className="fas fa-check-circle text-success mt-1 mr-2"></i>
-                      <span>Negotiated prices for products and freights to reduce cost of acquisition by achieving lower price.</span>
+                      <span className="text-blue-500 mr-3">/</span>
+                      <span>Reduced repeat complaints by 25% through high-precision record management.</span>
                     </li>
                   </ul>
                 </div>
@@ -136,84 +124,51 @@ const Resume = () => {
             {/* Education & Languages */}
             <div className="space-y-10">
               {/* Education */}
-              <motion.div variants={itemVariants} className="bg-white p-8 rounded-lg shadow-custom">
-                <h3 className="font-heading font-semibold text-2xl mb-6 flex items-center">
-                  <span className="w-10 h-10 bg-primary/10 text-primary rounded-full flex items-center justify-center mr-3">
-                    <i className="fas fa-graduation-cap"></i>
+              <motion.div variants={itemVariants} className="glass-morphism p-10 rounded-3xl border border-white/5">
+                <h3 className="font-heading font-semibold text-3xl mb-10 flex items-center text-white tracking-tight">
+                  <span className="w-12 h-12 bg-blue-600/20 text-blue-400 rounded-2xl flex items-center justify-center mr-5 shadow-inner">
+                    <i className="fas fa-graduation-cap text-xl"></i>
                   </span>
                   Education
                 </h3>
                 
-                <div className="space-y-8">
+                <div className="space-y-12">
                   {/* Education 1 */}
-                  <div className="border-l-4 border-secondary pl-5 relative">
-                    <div className="absolute w-4 h-4 bg-secondary rounded-full -left-[10px] top-0"></div>
-                    <h4 className="font-heading font-medium text-xl">The Complete Python Pro Bootcamp</h4>
-                    <p className="text-gray-600 mb-1">Udemy, Online</p>
-                    <p className="text-secondary font-medium mb-3">Oct 2023 - Jan 2024</p>
-                    <p className="text-gray-700">Certified Python course covering programming fundamentals and advanced concepts.</p>
-                  </div>
-                  
-                  {/* Education 2 */}
-                  <div className="border-l-4 border-secondary pl-5 relative">
-                    <div className="absolute w-4 h-4 bg-secondary rounded-full -left-[10px] top-0"></div>
-                    <h4 className="font-heading font-medium text-xl">Computer Science</h4>
-                    <p className="text-gray-600 mb-1">Govt. HSS Central Calvathy, Kochi</p>
-                    <p className="text-secondary font-medium mb-3">Jun 2019 - Mar 2021</p>
-                    <p className="text-gray-700">Pre-Degree program with focus on Computer Science fundamentals.</p>
+                  <div className="border-l-2 border-purple-600/30 pl-8 relative">
+                    <div className="absolute w-4 h-4 bg-purple-600 rounded-full -left-[9px] top-0 shadow-[0_0_15px_rgba(168,85,247,0.8)]"></div>
+                    <h4 className="font-heading font-bold text-2xl text-white mb-1 tracking-tight">Bachelors in Business Management</h4>
+                    <p className="text-purple-400 font-medium mb-2 tracking-wide text-sm uppercase">Warsaw University of Economics, Poland</p>
+                    <p className="text-gray-500 font-bold mb-4 text-xs tracking-widest uppercase">Nov 2025 — Jun 2028</p>
                   </div>
                 </div>
               </motion.div>
               
               {/* Languages */}
-              <motion.div variants={itemVariants} className="bg-white p-8 rounded-lg shadow-custom">
-                <h3 className="font-heading font-semibold text-2xl mb-6 flex items-center">
-                  <span className="w-10 h-10 bg-primary/10 text-primary rounded-full flex items-center justify-center mr-3">
-                    <i className="fas fa-language"></i>
+              <motion.div variants={itemVariants} className="glass-morphism p-10 rounded-3xl border border-white/5">
+                <h3 className="font-heading font-semibold text-3xl mb-10 flex items-center text-white tracking-tight">
+                  <span className="w-12 h-12 bg-blue-600/20 text-blue-400 rounded-2xl flex items-center justify-center mr-5 shadow-inner">
+                    <i className="fas fa-language text-xl"></i>
                   </span>
-                  Languages
+                  Linguistic Profile
                 </h3>
                 
-                <div className="space-y-5">
-                  <div>
-                    <div className="flex justify-between mb-1">
-                      <span className="font-medium">English</span>
-                      <span>Proficient</span>
+                <div className="space-y-8">
+                  {[
+                    { name: 'English', level: 'Proficient (B2)', width: '90%' },
+                    { name: 'Malayalam', level: 'Native', width: '100%' },
+                    { name: 'Hindi', level: 'Fluent', width: '85%' },
+                    { name: 'Tamil', level: 'Conversational', width: '60%' }
+                  ].map((lang, i) => (
+                    <div key={i}>
+                      <div className="flex justify-between mb-3 items-end">
+                        <span className="font-medium text-lg text-gray-300">{lang.name}</span>
+                        <span className="text-xs font-bold text-gray-500 uppercase tracking-widest">{lang.level}</span>
+                      </div>
+                      <div className="h-1 w-full bg-white/5 rounded-full overflow-hidden">
+                        <div className="h-full bg-blue-500/50 progress-bar-animation" style={ { width: lang.width } }></div>
+                      </div>
                     </div>
-                    <div className="h-2 w-full bg-gray-200 rounded-full overflow-hidden">
-                      <div className="h-full bg-primary progress-bar-animation" style={{ width: '90%' }}></div>
-                    </div>
-                  </div>
-                  
-                  <div>
-                    <div className="flex justify-between mb-1">
-                      <span className="font-medium">Malayalam</span>
-                      <span>Native</span>
-                    </div>
-                    <div className="h-2 w-full bg-gray-200 rounded-full overflow-hidden">
-                      <div className="h-full bg-primary progress-bar-animation" style={{ width: '100%' }}></div>
-                    </div>
-                  </div>
-                  
-                  <div>
-                    <div className="flex justify-between mb-1">
-                      <span className="font-medium">Hindi</span>
-                      <span>Intermediate</span>
-                    </div>
-                    <div className="h-2 w-full bg-gray-200 rounded-full overflow-hidden">
-                      <div className="h-full bg-primary progress-bar-animation" style={{ width: '70%' }}></div>
-                    </div>
-                  </div>
-                  
-                  <div>
-                    <div className="flex justify-between mb-1">
-                      <span className="font-medium">Tamil</span>
-                      <span>Basic</span>
-                    </div>
-                    <div className="h-2 w-full bg-gray-200 rounded-full overflow-hidden">
-                      <div className="h-full bg-primary progress-bar-animation" style={{ width: '40%' }}></div>
-                    </div>
-                  </div>
+                  ))}
                 </div>
               </motion.div>
             </div>

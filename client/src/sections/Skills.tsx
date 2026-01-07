@@ -96,20 +96,20 @@ const Skills = () => {
             <div className="space-y-10">
               {/* Soft Skills */}
               <motion.div variants={itemVariants}>
-                <h3 className="font-heading font-semibold text-2xl mb-6 flex items-center">
-                  <span className="w-10 h-10 bg-primary/10 text-primary rounded-full flex items-center justify-center mr-3">
-                    <i className="fas fa-user-tie"></i>
+                <h3 className="font-heading font-semibold text-3xl mb-10 flex items-center text-white tracking-tight">
+                  <span className="w-12 h-12 bg-blue-600/20 text-blue-400 rounded-2xl flex items-center justify-center mr-5 shadow-inner">
+                    <i className="fas fa-user-tie text-xl"></i>
                   </span>
-                  Soft Skills
+                  Capabilities
                 </h3>
                 
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-2 gap-6">
                   {softSkills.map((skill, index) => (
-                    <div key={index} className="flex items-center p-4 bg-white rounded-lg shadow-sm">
-                      <div className="w-10 h-10 bg-blue-100 text-primary rounded-full flex items-center justify-center mr-3">
+                    <div key={index} className="flex items-center p-5 glass-morphism rounded-2xl border border-white/5 hover:border-blue-500/30 transition-all group">
+                      <div className="w-12 h-12 bg-blue-600/10 text-blue-400 rounded-xl flex items-center justify-center mr-4 group-hover:scale-110 transition-transform">
                         <i className={skill.icon}></i>
                       </div>
-                      <span className="font-medium">{skill.name}</span>
+                      <span className="font-medium text-gray-300 group-hover:text-white transition-colors">{skill.name}</span>
                     </div>
                   ))}
                 </div>
@@ -117,25 +117,29 @@ const Skills = () => {
               
               {/* Certificates */}
               <motion.div variants={itemVariants}>
-                <h3 className="font-heading font-semibold text-2xl mb-6 flex items-center">
-                  <span className="w-10 h-10 bg-primary/10 text-primary rounded-full flex items-center justify-center mr-3">
-                    <i className="fas fa-certificate"></i>
+                <h3 className="font-heading font-semibold text-3xl mb-10 flex items-center text-white tracking-tight">
+                  <span className="w-12 h-12 bg-blue-600/20 text-blue-400 rounded-2xl flex items-center justify-center mr-5 shadow-inner">
+                    <i className="fas fa-certificate text-xl"></i>
                   </span>
-                  Certificates
+                  Accreditation
                 </h3>
                 
-                <div className="bg-white p-5 rounded-lg shadow-sm border border-gray-100">
-                  <div className="flex items-start">
-                    <div className="mr-4 text-3xl text-blue-500">
-                      <i className="fab fa-python"></i>
+                <div className="space-y-6">
+                  {[
+                    { title: 'Digital Marketing & E-Commerce', issuer: 'Google', icon: 'fab fa-google' },
+                    { title: '100 Days of Code: Python Pro', issuer: 'Udemy', icon: 'fab fa-python' },
+                    { title: 'English Core Skills (B2 Level)', issuer: 'Global Standard', icon: 'fas fa-language' }
+                  ].map((cert, i) => (
+                    <div key={i} className="glass-morphism p-6 rounded-2xl border border-white/5 flex items-center hover:bg-white/5 transition-all">
+                      <div className="mr-6 text-4xl text-blue-500/80">
+                        <i className={cert.icon}></i>
+                      </div>
+                      <div>
+                        <h4 className="font-heading font-medium text-lg text-white mb-1">{cert.title}</h4>
+                        <p className="text-gray-500 text-sm tracking-widest uppercase">{cert.issuer}</p>
+                      </div>
                     </div>
-                    <div>
-                      <h4 className="font-heading font-medium text-lg">100 Days of Code: The Complete Python Pro Bootcamp</h4>
-                      <p className="text-gray-600 text-sm mb-1">Udemy</p>
-                      <p className="text-primary font-medium mb-2">Certificate ID: UC-f27e995f</p>
-                      <a href="#" className="text-sm text-blue-600 hover:underline">View Certificate</a>
-                    </div>
-                  </div>
+                  ))}
                 </div>
               </motion.div>
             </div>
