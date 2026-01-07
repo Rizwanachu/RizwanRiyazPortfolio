@@ -99,7 +99,7 @@ const Shop = () => {
             </motion.div>
             
             {/* TeePublic Store */}
-            <motion.div variants={itemVariants} className="bg-white rounded-lg shadow-custom overflow-hidden">
+            <motion.div variants={itemVariants} className="rounded-lg shadow-custom overflow-hidden bg-[#18181d]">
               <div className="h-64 overflow-hidden">
                 <img 
                   src="https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
