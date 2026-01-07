@@ -48,12 +48,26 @@ const Contact = () => {
     setIsSubmitting(true);
     
     try {
-      // Use Netlify function endpoint for deployment
+      // Create Gmail mailto link
+      const emailTo = 'rizwanriyaz321@gmail.com';
+      const subject = encodeURIComponent(data.subject || `New Message from ${data.name}`);
+      const body = encodeURIComponent(
+        `Name: ${data.name}\n` +
+        `Email: ${data.email}\n\n` +
+        `Message:\n${data.message}`
+      );
+      
+      const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${emailTo}&su=${subject}&body=${body}`;
+      
+      // Open Gmail in a new tab
+      window.open(gmailUrl, '_blank');
+      
+      // Also save to database for record keeping
       const apiEndpoint = import.meta.env.DEV 
         ? '/api/contact' 
         : '/.netlify/functions/contactform';
         
-      const response = await fetch(apiEndpoint, {
+      await fetch(apiEndpoint, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -61,15 +75,9 @@ const Contact = () => {
         body: JSON.stringify(data),
       });
       
-      const result = await response.json();
-      
-      if (!response.ok) {
-        throw new Error(result.message || 'Failed to send message');
-      }
-      
       toast({
-        title: 'Message sent!',
-        description: 'Thanks for your message. I will get back to you soon.',
+        title: 'Draft Created!',
+        description: 'Opening Gmail with your message details...',
       });
       
       form.reset();
@@ -78,7 +86,7 @@ const Contact = () => {
       
       toast({
         title: 'Error',
-        description: 'There was a problem sending your message. Please try again.',
+        description: 'There was a problem processing your request.',
         variant: 'destructive',
       });
     } finally {
