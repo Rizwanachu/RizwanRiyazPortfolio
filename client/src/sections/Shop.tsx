@@ -108,7 +108,7 @@ const Shop = () => {
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                 />
               </div>
-              <div className="p-6">
+              <div className="p-6 bg-[#18181d]">
                 <div className="flex items-center justify-between mb-4">
                   <h3 className="font-heading font-semibold text-xl">TeePublic Store</h3>
                   <svg className="h-8 text-blue-500" viewBox="0 0 24 24" fill="currentColor">
