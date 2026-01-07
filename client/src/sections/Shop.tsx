@@ -35,25 +35,24 @@ const Shop = () => {
   };
 
   return (
-    <section id="shop" className="py-16 md:py-24 bg-white" ref={ref}>
+    <section id="shop" className="py-24 md:py-32 bg-[#0a0a0c]" ref={ref}>
       <div className="container mx-auto px-4">
         <motion.div
           variants={containerVariants}
           initial="hidden"
           animate={controls}
-          className="section-reveal"
         >
-          <motion.div variants={itemVariants} className="text-center mb-16">
-            <h2 className="font-heading font-bold text-3xl md:text-4xl text-dark mb-4">My Shop</h2>
-            <div className="w-20 h-1 bg-primary mx-auto mb-6"></div>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              Check out my brand "Glam Gustoz" featuring unique designs available on Redbubble and TeePublic.
+          <motion.div variants={itemVariants} className="text-center mb-24">
+            <h2 className="font-heading font-bold text-4xl md:text-5xl text-white mb-6 tracking-tight">Merchandise</h2>
+            <div className="w-24 h-1.5 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto mb-10 rounded-full"></div>
+            <p className="text-gray-500 max-w-2xl mx-auto text-lg font-light">
+              Premium apparel and digital assets under the <span className="text-white font-medium">Glam Gustoz</span> banner.
             </p>
           </motion.div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-20">
             {/* Redbubble Store */}
-            <motion.div variants={itemVariants} className="bg-white rounded-lg shadow-custom overflow-hidden">
+            <motion.div variants={itemVariants} className="card-3d rounded-2xl overflow-hidden">
               <div className="h-64 overflow-hidden">
                 <img 
                   src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 

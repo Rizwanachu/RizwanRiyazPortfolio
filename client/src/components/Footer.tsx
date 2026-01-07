@@ -38,15 +38,15 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-dark text-white py-12">
+    <footer className="bg-[#08080a] text-white py-20 border-t border-white/5">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
           <div>
-            <h3 className="font-heading font-bold text-2xl mb-4">
-              <span className="text-white">Rizwan Riyaz</span>
+            <h3 className="font-heading font-bold text-3xl mb-6 tracking-tighter">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">Rizwan Riyaz</span>
             </h3>
-            <p className="text-gray-400 mb-6">
-              Web Designer, Data Entry Specialist & Digital Marketing Professional creating efficient and beautiful digital experiences.
+            <p className="text-gray-500 mb-8 leading-relaxed font-light">
+              Architecting high-performance digital solutions with a focus on precision, creativity, and modern user experiences.
             </p>
             <div className="flex space-x-4">
               <a 

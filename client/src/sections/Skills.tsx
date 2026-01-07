@@ -48,42 +48,42 @@ const Skills = () => {
   };
 
   return (
-    <section id="skills" className="py-16 md:py-24 bg-gradient-to-br from-gray-50 to-blue-50 skills-section" ref={ref}>
+    <section id="skills" className="py-24 md:py-32 bg-[#08080a] skills-section relative overflow-hidden" ref={ref}>
+      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-purple-600/5 rounded-full blur-[150px] -z-10"></div>
       <div className="container mx-auto px-4">
         <motion.div
           variants={containerVariants}
           initial="hidden"
           animate={controls}
-          className="section-reveal"
         >
-          <motion.div variants={itemVariants} className="text-center mb-16">
-            <h2 className="font-heading font-bold text-3xl md:text-4xl text-dark mb-4">Skills & Expertise</h2>
-            <div className="w-20 h-1 bg-primary mx-auto mb-6"></div>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              Here are the tools and technologies I specialize in to deliver high-quality solutions.
+          <motion.div variants={itemVariants} className="text-center mb-24">
+            <h2 className="font-heading font-bold text-4xl md:text-5xl text-white mb-6 tracking-tight">Core Expertise</h2>
+            <div className="w-24 h-1.5 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto mb-10 rounded-full"></div>
+            <p className="text-gray-500 max-w-2xl mx-auto text-lg font-light">
+              Specialized skill set focused on digital acceleration and structural efficiency.
             </p>
           </motion.div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-20">
             {/* Technical Skills */}
             <motion.div variants={itemVariants}>
-              <h3 className="font-heading font-semibold text-2xl mb-6 flex items-center">
-                <span className="w-10 h-10 bg-primary/10 text-primary rounded-full flex items-center justify-center mr-3">
-                  <i className="fas fa-laptop-code"></i>
+              <h3 className="font-heading font-semibold text-3xl mb-10 flex items-center text-white tracking-tight">
+                <span className="w-12 h-12 bg-blue-600/20 text-blue-400 rounded-2xl flex items-center justify-center mr-5 shadow-inner">
+                  <i className="fas fa-laptop-code text-xl"></i>
                 </span>
-                Technical Skills
+                Technical Stack
               </h3>
               
-              <div className="space-y-6">
+              <div className="space-y-10">
                 {technicalSkills.map((skill, index) => (
-                  <div key={index}>
-                    <div className="flex justify-between mb-2">
-                      <span className="font-medium">{skill.name}</span>
-                      <span>{skill.percentage}%</span>
+                  <div key={index} className="group">
+                    <div className="flex justify-between mb-4 items-end">
+                      <span className="font-medium text-lg text-gray-300 group-hover:text-blue-400 transition-colors">{skill.name}</span>
+                      <span className="text-sm font-bold text-gray-500">{skill.percentage}%</span>
                     </div>
-                    <div className="h-2.5 w-full bg-gray-200 rounded-full overflow-hidden">
+                    <div className="h-1.5 w-full bg-white/5 rounded-full overflow-hidden backdrop-blur-md border border-white/5">
                       <div 
-                        className="h-full bg-primary progress-bar-animation" 
+                        className="h-full bg-gradient-to-r from-blue-600 to-blue-400 progress-bar-animation shadow-[0_0_10px_rgba(37,99,235,0.5)]" 
                         style={{ width: `${skill.percentage}%` }}
                       ></div>
                     </div>

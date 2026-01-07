@@ -36,22 +36,26 @@ const Header = () => {
   ];
 
   return (
-    <header className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white/90 backdrop-blur-sm shadow-sm' : 'bg-transparent'}`}>
-      <div className="container mx-auto px-4 py-3 flex justify-between items-center">
-        <div className="font-heading font-bold text-2xl text-primary">
-          <span className="text-dark">Rizwan</span>Riyaz
-        </div>
+    <header className={`fixed w-full z-50 transition-all duration-500 ${isScrolled ? 'bg-[#0a0a0c]/80 backdrop-blur-xl border-b border-white/5 shadow-2xl' : 'bg-transparent'}`}>
+      <div className="container mx-auto px-4 py-4 flex justify-between items-center">
+        <motion.div 
+          whileHover={ { scale: 1.05 } }
+          className="font-heading font-bold text-3xl tracking-tighter"
+        >
+          <span className="text-white">Rizwan</span><span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">Riyaz</span>
+        </motion.div>
         
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-8">
+        <nav className="hidden md:flex items-center space-x-10">
           {navLinks.map((link) => (
-            <a 
+            <motion.a 
               key={link.name}
               href={link.href} 
-              className="font-medium hover:text-primary transition-colors"
+              whileHover={ { y: -2, color: '#60a5fa' } }
+              className="font-medium text-gray-300 hover:text-blue-400 transition-all text-sm tracking-widest uppercase"
             >
               {link.name}
-            </a>
+            </motion.a>
           ))}
         </nav>
         

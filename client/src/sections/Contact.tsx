@@ -107,35 +107,35 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-16 md:py-24 bg-gradient-to-br from-gray-50 to-blue-50" ref={ref}>
-      <div className="container mx-auto px-4">
+    <section id="contact" className="py-24 md:py-32 bg-[#08080a] relative" ref={ref}>
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(59,130,246,0.1),transparent_50%)]"></div>
+      <div className="container mx-auto px-4 relative z-10">
         <motion.div
           variants={containerVariants}
           initial="hidden"
           animate={controls}
-          className="section-reveal"
         >
-          <motion.div variants={itemVariants} className="text-center mb-16">
-            <h2 className="font-heading font-bold text-3xl md:text-4xl text-dark mb-4">Get In Touch</h2>
-            <div className="w-20 h-1 bg-primary mx-auto mb-6"></div>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              Have a project in mind or want to collaborate? Feel free to reach out!
+          <motion.div variants={itemVariants} className="text-center mb-24">
+            <h2 className="font-heading font-bold text-4xl md:text-5xl text-white mb-6 tracking-tight">Direct Access</h2>
+            <div className="w-24 h-1.5 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto mb-10 rounded-full"></div>
+            <p className="text-gray-500 max-w-2xl mx-auto text-lg font-light">
+              Ready to initiate a high-level digital collaboration? Reach out below.
             </p>
           </motion.div>
           
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-16">
             {/* Contact Info */}
-            <motion.div variants={itemVariants} className="lg:col-span-2 bg-white p-8 rounded-lg shadow-custom">
-              <h3 className="font-heading font-semibold text-2xl mb-6">Contact Information</h3>
+            <motion.div variants={itemVariants} className="lg:col-span-2 glass-morphism p-10 rounded-3xl border border-white/5">
+              <h3 className="font-heading font-semibold text-3xl mb-10 text-white tracking-tight">Intelligence</h3>
               
-              <div className="space-y-6">
-                <div className="flex items-start">
-                  <div className="w-12 h-12 bg-primary/10 text-primary rounded-full flex items-center justify-center mr-4 shrink-0">
-                    <i className="fas fa-envelope"></i>
+              <div className="space-y-10">
+                <div className="flex items-start group">
+                  <div className="w-14 h-14 bg-blue-600/10 text-blue-400 rounded-2xl flex items-center justify-center mr-6 shrink-0 border border-blue-500/10 group-hover:bg-blue-600 group-hover:text-white transition-all duration-500">
+                    <i className="fas fa-envelope text-xl"></i>
                   </div>
                   <div>
-                    <h4 className="font-medium text-lg mb-1">Email</h4>
-                    <a href="mailto:rizwanriyaz321@gmail.com" className="text-primary hover:underline">rizwanriyaz321@gmail.com</a>
+                    <h4 className="font-medium text-lg mb-1 text-gray-300">Signal</h4>
+                    <a href="mailto:rizwanriyaz321@gmail.com" className="text-blue-500 hover:text-blue-400 transition-colors font-light">rizwanriyaz321@gmail.com</a>
                   </div>
                 </div>
                 

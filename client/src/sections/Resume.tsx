@@ -54,64 +54,53 @@ const Resume = () => {
   };
 
   return (
-    <section id="resume" className="py-16 md:py-24 bg-gray-50" ref={ref}>
-      <div className="container mx-auto px-4">
+    <section id="resume" className="py-24 md:py-32 bg-[#0a0a0c] relative" ref={ref}>
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-blue-600/5 rounded-full blur-[150px] -z-10"></div>
+      <div className="container mx-auto px-4 relative z-10">
         <motion.div
           variants={containerVariants}
           initial="hidden"
           animate={controls}
-          className="section-reveal"
         >
-          <motion.div variants={itemVariants} className="text-center mb-16">
-            <h2 className="font-heading font-bold text-3xl md:text-4xl text-dark mb-4">Resume</h2>
-            <div className="w-20 h-1 bg-primary mx-auto"></div>
+          <motion.div variants={itemVariants} className="text-center mb-24">
+            <h2 className="font-heading font-bold text-4xl md:text-5xl text-white mb-6 tracking-tight">Experience</h2>
+            <div className="w-24 h-1.5 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto rounded-full"></div>
           </motion.div>
           
-          <motion.div variants={itemVariants} className="flex justify-center mb-10">
-            <Button className="px-6 py-3 bg-primary text-white font-medium rounded-lg hover:bg-blue-700 transition-colors shadow-md flex items-center">
-              <a href={resumePdfPath} download="Rizwan_Riyaz_Resume.pdf" className="text-white flex items-center">
-                <i className="fas fa-download mr-2"></i> Download Resume
-              </a>
-            </Button>
+          <motion.div variants={itemVariants} className="flex justify-center mb-16">
+            <motion.div
+              whileHover={ { scale: 1.05 } }
+              whileTap={ { scale: 0.95 } }
+            >
+              <Button className="px-10 py-6 bg-blue-600 text-white font-bold rounded-2xl hover:bg-blue-700 transition-all shadow-[0_0_30px_rgba(37,99,235,0.3)] flex items-center gap-3 border border-blue-400/20 uppercase tracking-widest text-xs">
+                <a href={resumePdfPath} download="Rizwan_Riyaz_Resume.pdf" className="text-white flex items-center">
+                  <i className="fas fa-download mr-2"></i> Download Dossier
+                </a>
+              </Button>
+            </motion.div>
           </motion.div>
           
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             {/* Experience */}
-            <motion.div variants={itemVariants} className="bg-white p-8 rounded-lg shadow-custom">
-              <h3 className="font-heading font-semibold text-2xl mb-6 flex items-center">
-                <span className="w-10 h-10 bg-primary/10 text-primary rounded-full flex items-center justify-center mr-3">
-                  <i className="fas fa-briefcase"></i>
+            <motion.div variants={itemVariants} className="glass-morphism p-10 rounded-3xl border border-white/5">
+              <h3 className="font-heading font-semibold text-3xl mb-10 flex items-center text-white tracking-tight">
+                <span className="w-12 h-12 bg-blue-600/20 text-blue-400 rounded-2xl flex items-center justify-center mr-5 shadow-inner">
+                  <i className="fas fa-briefcase text-xl"></i>
                 </span>
-                Work Experience
+                Professional Path
               </h3>
               
-              <div className="space-y-8">
+              <div className="space-y-12">
                 {/* Experience 1 */}
-                <div className="border-l-4 border-primary pl-5 relative">
-                  <div className="absolute w-4 h-4 bg-primary rounded-full -left-[10px] top-0"></div>
-                  <h4 className="font-heading font-medium text-xl">Data Entry Typist, Translator</h4>
-                  <p className="text-gray-600 mb-1">Space Dot Private Limited, India</p>
-                  <p className="text-primary font-medium mb-3">Jan 2024 - Present</p>
-                  <ul className="text-gray-700 space-y-2">
+                <div className="border-l-2 border-blue-600/30 pl-8 relative">
+                  <div className="absolute w-4 h-4 bg-blue-600 rounded-full -left-[9px] top-0 shadow-[0_0_15px_rgba(37,99,235,0.8)]"></div>
+                  <h4 className="font-heading font-bold text-2xl text-white mb-1 tracking-tight">Data Strategy & Translation</h4>
+                  <p className="text-blue-400 font-medium mb-2 tracking-wide text-sm uppercase">Space Dot Private Limited</p>
+                  <p className="text-gray-500 font-bold mb-4 text-xs tracking-widest uppercase">2024 — Present</p>
+                  <ul className="text-gray-400 space-y-4 font-light leading-relaxed">
                     <li className="flex items-start">
-                      <i className="fas fa-check-circle text-success mt-1 mr-2"></i>
-                      <span>Completed data entry tasks with accuracy and efficiency.</span>
-                    </li>
-                    <li className="flex items-start">
-                      <i className="fas fa-check-circle text-success mt-1 mr-2"></i>
-                      <span>Organized, sorted, and checked input data against original documents.</span>
-                    </li>
-                    <li className="flex items-start">
-                      <i className="fas fa-check-circle text-success mt-1 mr-2"></i>
-                      <span>Verified accuracy of data entered into the system to produce error-free reports.</span>
-                    </li>
-                    <li className="flex items-start">
-                      <i className="fas fa-check-circle text-success mt-1 mr-2"></i>
-                      <span>Developed data entry policies and procedures in compliance with company standards.</span>
-                    </li>
-                    <li className="flex items-start">
-                      <i className="fas fa-check-circle text-success mt-1 mr-2"></i>
-                      <span>Sorted documents and maintained organized filing process.</span>
+                      <span className="text-blue-500 mr-3">/</span>
+                      <span>High-precision data architecture and multi-format translation efficiency.</span>
                     </li>
                   </ul>
                 </div>
