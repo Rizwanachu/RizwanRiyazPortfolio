@@ -17,17 +17,28 @@ const Hero = () => {
     <section 
       id="home" 
       ref={containerRef}
-      className="relative pt-24 pb-16 md:pt-32 md:pb-24 bg-gradient-to-br from-blue-50 to-gray-50 overflow-hidden min-h-[90vh] flex items-center"
+      className="relative pt-24 pb-16 md:pt-32 md:pb-24 bg-[#0a0a0c] overflow-hidden min-h-[95vh] flex items-center"
     >
-      {/* 3D Decorative Background Elements */}
-      <motion.div 
-        style={ { y: y2, x: -50 } }
-        className="absolute top-20 left-10 w-64 h-64 bg-primary/5 rounded-full blur-3xl -z-10" 
-      />
-      <motion.div 
-        style={ { y: y1, x: 50 } }
-        className="absolute bottom-20 right-10 w-96 h-96 bg-secondary/5 rounded-full blur-3xl -z-10" 
-      />
+      {/* Premium Dark Animated Background */}
+      <div className="absolute inset-0 z-0">
+        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.1),transparent_50%)]"></div>
+        <motion.div 
+          animate={ { 
+            scale: [1, 1.2, 1],
+            opacity: [0.3, 0.5, 0.3],
+          } }
+          transition={ { duration: 10, repeat: Infinity, ease: "linear" } }
+          className="absolute -top-[20%] -left-[10%] w-[60%] h-[60%] bg-blue-600/10 rounded-full blur-[120px]" 
+        />
+        <motion.div 
+          animate={ { 
+            scale: [1.2, 1, 1.2],
+            opacity: [0.2, 0.4, 0.2],
+          } }
+          transition={ { duration: 12, repeat: Infinity, ease: "linear" } }
+          className="absolute -bottom-[20%] -right-[10%] w-[60%] h-[60%] bg-purple-600/10 rounded-full blur-[120px]" 
+        />
+      </div>
 
       <div className="container mx-auto px-4 flex flex-col md:flex-row items-center relative z-10">
         <motion.div 
@@ -42,18 +53,18 @@ const Hero = () => {
             animate={ { opacity: 1, y: 0 } }
             transition={ { delay: 0.2, duration: 0.6 } }
           >
-            <h1 className="font-heading font-bold text-4xl md:text-5xl lg:text-6xl mb-4 leading-tight">
-              Hi, I'm <span className="text-primary inline-block hover:scale-105 transition-transform cursor-default">Rizwan Riyaz</span>
+            <h1 className="font-heading font-bold text-5xl md:text-6xl lg:text-8xl mb-6 leading-tight tracking-tighter text-white">
+              Hi, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-blue-600 to-purple-500 inline-block animate-gradient">Rizwan Riyaz</span>
             </h1>
           </motion.div>
           
           <motion.h2 
-            className="text-xl md:text-2xl text-gray-600 mb-6"
+            className="text-2xl md:text-3xl text-gray-400 mb-8 font-light tracking-wide"
             initial={ { opacity: 0, y: 20 } }
             animate={ { opacity: 1, y: 0 } }
             transition={ { delay: 0.4, duration: 0.6 } }
           >
-            Web Designer | Data Entry Specialist | Digital Marketing Professional
+            Web Architect <span className="text-blue-500 mx-2">|</span> Data Strategist <span className="text-blue-500 mx-2">|</span> Digital Growth Expert
           </motion.h2>
           
           <motion.p 
@@ -134,7 +145,7 @@ const Hero = () => {
               <img 
                 src="https://images.unsplash.com/photo-1600486913747-55e5470d6f40?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" 
                 alt="Rizwan Riyaz" 
-                className="w-64 h-64 md:w-80 md:h-80 object-cover rounded-full border-8 border-white shadow-2xl z-10 relative"
+                className="w-64 h-64 md:w-80 md:h-80 object-cover rounded-full border-8 border-[#1a1a1e] shadow-[0_0_50px_rgba(59,130,246,0.3)] z-10 relative grayscale hover:grayscale-0 transition-all duration-700"
               />
               
               {/* Floating badges */}

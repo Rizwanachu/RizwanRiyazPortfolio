@@ -38,7 +38,7 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-light text-dark font-body">
+    <div className="min-h-screen bg-[#0a0a0c] text-white font-body selection:bg-blue-500/30">
       <Header />
       
       <main>
