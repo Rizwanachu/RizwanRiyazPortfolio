@@ -3,11 +3,8 @@ import { motion, useAnimation } from 'framer-motion';
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 import { Button } from '@/components/ui/button';
 
-// In development, use the imported PDF
-// In production, use the path to the deployed asset
-const resumePdfPath = import.meta.env.DEV 
-  ? '/attached_assets/RIZWAN_RIYAZ_RESUME_2026_1767816929258.pdf'
-  : '/attached_assets/RIZWAN_RIYAZ_RESUME_2026_1767816929258.pdf';
+// In development and production, use the API endpoint to serve the attached asset
+const resumePdfPath = '/api/resume';
 
 const Resume = () => {
   const controls = useAnimation();

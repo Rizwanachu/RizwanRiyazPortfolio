@@ -3,8 +3,22 @@ import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { contactFormSchema } from "@shared/schema";
 import { z } from "zod";
+import path from "path";
+import fs from "fs";
 
 export async function registerRoutes(app: Express): Promise<Server> {
+  // Serve files from attached_assets
+  app.get('/api/resume', async (_req, res) => {
+    const filePath = path.resolve(process.cwd(), 'attached_assets', 'RIZWAN_RIYAZ_RESUME_2026_1767816929258.pdf');
+    if (fs.existsSync(filePath)) {
+      res.setHeader('Content-Type', 'application/pdf');
+      res.setHeader('Content-Disposition', 'attachment; filename=RIZWAN_RIYAZ_RESUME_2026.pdf');
+      fs.createReadStream(filePath).pipe(res);
+    } else {
+      res.status(404).send('Resume not found');
+    }
+  });
+
   // Contact form submission route
   app.post('/api/contact', async (req, res) => {
     try {
