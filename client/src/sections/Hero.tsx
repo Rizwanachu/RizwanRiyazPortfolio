@@ -65,7 +65,7 @@ const Hero = () => {
             animate={ { opacity: 1, y: 0 } }
             transition={ { delay: 0.4, duration: 0.6 } }
           >
-            Web Designer <span className="text-blue-500 mx-2 hidden sm:inline">|</span> <br className="sm:hidden" /> Digital Marketing & Social Media Manager <span className="text-blue-500 mx-2 hidden sm:inline">|</span> <br className="sm:hidden" /> Data Entry Specialist <span className="text-blue-500 mx-2 hidden sm:inline">|</span> <br className="sm:hidden" /> Certified in Google Digital Marketing & E-Commerce
+            Web Designer <span className="text-blue-500 mx-2 hidden sm:inline">|</span> <br className="sm:hidden" /> Digital Marketing & Social Media Manager <span className="text-blue-500 mx-2 hidden sm:inline">|</span> <br className="sm:hidden" /> Certified in Google Digital Marketing & E-Commerce
           </motion.h2>
           
           <motion.p 
