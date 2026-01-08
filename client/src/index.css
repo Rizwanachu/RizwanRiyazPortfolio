@@ -101,24 +101,26 @@ html {
 }
 
 .card-3d {
-  background: rgba(30, 30, 35, 0.7);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(15, 15, 20, 0.4);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
   transform-style: preserve-3d;
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
 }
 
 .card-3d:hover {
-  transform: rotateY(12deg) rotateX(8deg) translateY(-15px);
-  border-color: rgba(59, 130, 246, 0.5);
-  box-shadow: 0 35px 60px -15px rgba(59, 130, 246, 0.3);
+  transform: translateY(-8px);
+  border-color: rgba(59, 130, 246, 0.4);
+  box-shadow: 0 35px 60px -15px rgba(59, 130, 246, 0.2);
 }
 
 .glass-morphism {
-  background: rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: rgba(15, 15, 20, 0.4);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .glow-effect {

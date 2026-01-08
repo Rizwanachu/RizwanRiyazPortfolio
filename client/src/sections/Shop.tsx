@@ -67,14 +67,14 @@ const Shop = () => {
                     <path d="M12 6c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm0 10c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4z"/>
                   </svg>
                 </div>
-                <p className="text-gray-700 mb-6">
+                <p className="text-gray-400 mb-6 leading-relaxed">
                   Discover my unique designs on various products from apparel to home decor on Redbubble.
                 </p>
                 <div className="flex flex-wrap gap-2 mb-6">
-                  <span className="px-3 py-1 bg-blue-100 text-primary rounded-full text-xs">T-Shirts</span>
-                  <span className="px-3 py-1 bg-blue-100 text-primary rounded-full text-xs">Stickers</span>
-                  <span className="px-3 py-1 bg-blue-100 text-primary rounded-full text-xs">Posters</span>
-                  <span className="px-3 py-1 bg-blue-100 text-primary rounded-full text-xs">Home Decor</span>
+                  <span className="px-3 py-1 bg-blue-500/10 text-blue-400 border border-blue-500/20 rounded-full text-xs">T-Shirts</span>
+                  <span className="px-3 py-1 bg-blue-500/10 text-blue-400 border border-blue-500/20 rounded-full text-xs">Stickers</span>
+                  <span className="px-3 py-1 bg-blue-500/10 text-blue-400 border border-blue-500/20 rounded-full text-xs">Posters</span>
+                  <span className="px-3 py-1 bg-blue-500/10 text-blue-400 border border-blue-500/20 rounded-full text-xs">Home Decor</span>
                 </div>
                 <div className="flex space-x-4">
                   <a href="https://www.facebook.com/profile.php?id=100093311292280" target="_blank" rel="noopener noreferrer" className="text-secondary hover:text-primary transition-colors">
@@ -99,7 +99,7 @@ const Shop = () => {
             </motion.div>
             
             {/* TeePublic Store */}
-            <motion.div variants={itemVariants} className="rounded-lg shadow-custom overflow-hidden bg-[#18181d]">
+            <motion.div variants={itemVariants} className="card-3d rounded-2xl overflow-hidden bg-transparent border-0 shadow-none">
               <div className="h-64 overflow-hidden">
                 <img 
                   src="https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
@@ -107,22 +107,22 @@ const Shop = () => {
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                 />
               </div>
-              <div className="p-6 bg-[#18181d]">
+              <div className="p-6">
                 <div className="flex items-center justify-between mb-4">
-                  <h3 className="font-heading font-semibold text-xl">TeePublic Store</h3>
+                  <h3 className="font-heading font-semibold text-xl text-white tracking-tight">TeePublic Store</h3>
                   <svg className="h-8 text-blue-500" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M20.38 8.57l-1.23 1.85a8 8 0 0 1-.22 7.58H5.07A8 8 0 0 1 15.58 6.85l1.85-1.23A10 10 0 0 0 3.35 19a2 2 0 0 0 1.72 1h13.85a2 2 0 0 0 1.74-1 10 10 0 0 0-.27-10.44z"/>
                     <path d="M10.59 15.41a2 2 0 0 0 2.83 0l5.66-8.49-8.49 5.66a2 2 0 0 0 0 2.83z"/>
                   </svg>
                 </div>
-                <p className="text-gray-700 mb-6">
+                <p className="text-gray-400 mb-6 leading-relaxed">
                   Explore my creative t-shirt designs and other apparel collections on TeePublic.
                 </p>
                 <div className="flex flex-wrap gap-2 mb-6">
-                  <span className="px-3 py-1 bg-blue-100 text-primary rounded-full text-xs">T-Shirts</span>
-                  <span className="px-3 py-1 bg-blue-100 text-primary rounded-full text-xs">Hoodies</span>
-                  <span className="px-3 py-1 bg-blue-100 text-primary rounded-full text-xs">Phone Cases</span>
-                  <span className="px-3 py-1 bg-blue-100 text-primary rounded-full text-xs">Mugs</span>
+                  <span className="px-3 py-1 bg-blue-500/10 text-blue-400 border border-blue-500/20 rounded-full text-xs">T-Shirts</span>
+                  <span className="px-3 py-1 bg-blue-500/10 text-blue-400 border border-blue-500/20 rounded-full text-xs">Hoodies</span>
+                  <span className="px-3 py-1 bg-blue-500/10 text-blue-400 border border-blue-500/20 rounded-full text-xs">Phone Cases</span>
+                  <span className="px-3 py-1 bg-blue-500/10 text-blue-400 border border-blue-500/20 rounded-full text-xs">Mugs</span>
                 </div>
                 <div className="flex space-x-4">
                   <a href="https://www.facebook.com/profile.php?id=100093311292280" target="_blank" rel="noopener noreferrer" className="text-secondary hover:text-primary transition-colors">

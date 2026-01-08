@@ -120,7 +120,7 @@ const Portfolio = () => {
                 </div>
                 <div className="p-8">
                   <h3 className="font-heading font-semibold text-2xl mb-3 text-white tracking-tight">{project.title}</h3>
-                  <p className="text-gray-500 text-base mb-6 font-light line-clamp-2">{project.description}</p>
+                  <p className="text-gray-400 text-base mb-6 font-light line-clamp-2 leading-relaxed">{project.description}</p>
                   <div className="flex flex-wrap gap-3">
                     {project.tags.map((tag, index) => (
                       <span 
