@@ -46,7 +46,6 @@ const Hero = () => {
           className="md:w-1/2 mb-10 md:mb-0"
           initial={ { opacity: 0, x: -50 } }
           animate={ { opacity: 1, x: 0 } }
-          style={ { opacity, scale } }
           transition={ { duration: 0.8, ease: "easeOut" } }
         >
           <motion.div
