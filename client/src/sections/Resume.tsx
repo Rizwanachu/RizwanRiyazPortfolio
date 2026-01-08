@@ -138,29 +138,8 @@ const Resume = () => {
               </div>
             </motion.div>
             
-            {/* Education & Languages */}
+            {/* Languages */}
             <div className="space-y-10">
-              {/* Education */}
-              <motion.div variants={itemVariants} className="glass-morphism p-10 rounded-3xl border border-white/5">
-                <h3 className="font-heading font-semibold text-3xl mb-10 flex items-center text-white tracking-tight">
-                  <span className="w-12 h-12 bg-blue-600/20 text-blue-400 rounded-2xl flex items-center justify-center mr-5 shadow-inner">
-                    <i className="fas fa-graduation-cap text-xl"></i>
-                  </span>
-                  Education
-                </h3>
-                
-                <div className="space-y-12">
-                  {/* Education 1 */}
-                  <div className="border-l-2 border-purple-600/30 pl-8 relative">
-                    <div className="absolute w-4 h-4 bg-purple-600 rounded-full -left-[9px] top-0 shadow-[0_0_15px_rgba(168,85,247,0.8)]"></div>
-                    <h4 className="font-heading font-bold text-2xl text-white mb-1 tracking-tight">Bachelors in Business Management</h4>
-                    <p className="text-purple-400 font-medium mb-2 tracking-wide text-sm uppercase">Warsaw University of Economics, Poland</p>
-                    <p className="text-gray-500 font-bold mb-4 text-xs tracking-widest uppercase">Nov 2025 — Jun 2028</p>
-                  </div>
-                </div>
-              </motion.div>
-              
-              {/* Languages */}
               <motion.div variants={itemVariants} className="glass-morphism p-10 rounded-3xl border border-white/5">
                 <h3 className="font-heading font-semibold text-3xl mb-10 flex items-center text-white tracking-tight">
                   <span className="w-12 h-12 bg-blue-600/20 text-blue-400 rounded-2xl flex items-center justify-center mr-5 shadow-inner">
