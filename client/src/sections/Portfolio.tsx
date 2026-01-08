@@ -68,34 +68,14 @@ const Portfolio = () => {
             </p>
           </motion.div>
           
-          {/* Portfolio Filter */}
-          <motion.div 
-            variants={itemVariants} 
-            className="flex flex-wrap justify-center gap-3 md:gap-6 mb-16 md:mb-20"
-          >
-            {filters.map((filter) => (
-              <motion.button 
-                key={filter}
-                whileHover={ { scale: 1.05 } }
-                whileTap={ { scale: 0.95 } }
-                onClick={() => setActiveFilter(filter)}
-                className={`px-4 md:px-8 py-2 md:py-3 rounded-xl transition-all font-medium tracking-wide text-sm md:text-base ${
-                  activeFilter === filter 
-                    ? 'bg-blue-600 text-white shadow-[0_0_20px_rgba(37,99,235,0.4)]' 
-                    : 'bg-white/5 text-gray-400 hover:bg-white/10 border border-white/5'
-                }`}
-              >
-                {filter}
-              </motion.button>
-            ))}
-          </motion.div>
+          {/* Portfolio Filter Removed */}
           
           {/* Portfolio Grid */}
           <motion.div 
             variants={containerVariants}
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10"
           >
-            {filteredProjects.map((project) => (
+            {projects.map((project) => (
               <motion.div 
                 key={project.id}
                 variants={itemVariants}
