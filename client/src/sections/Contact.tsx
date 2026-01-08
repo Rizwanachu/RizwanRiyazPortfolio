@@ -142,7 +142,7 @@ const Contact = () => {
                     <i className="fas fa-envelope text-xl"></i>
                   </div>
                   <div>
-                    <h4 className="font-medium text-lg mb-1 text-gray-300">Signal</h4>
+                    <h4 className="font-medium text-lg mb-1 text-gray-300">Email</h4>
                     <a href="mailto:rizwanriyaz321@gmail.com" className="text-blue-500 hover:text-blue-400 transition-colors font-light">rizwanriyaz321@gmail.com</a>
                   </div>
                 </div>
@@ -289,7 +289,7 @@ const Contact = () => {
                       disabled={isSubmitting}
                       className="w-full md:w-auto px-10 py-7 bg-blue-600 text-white font-bold rounded-2xl hover:bg-blue-700 transition-all shadow-[0_0_30px_rgba(37,99,235,0.3)] flex items-center gap-3 border border-blue-400/20 uppercase tracking-widest text-xs"
                     >
-                      {isSubmitting ? 'Processing Signal...' : (
+                      {isSubmitting ? 'Processing Email...' : (
                         <>
                           Send Message <i className="fas fa-paper-plane ml-2"></i>
                         </>
