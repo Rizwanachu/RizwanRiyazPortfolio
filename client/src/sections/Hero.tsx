@@ -54,7 +54,7 @@ const Hero = () => {
             transition={ { delay: 0.2, duration: 0.6 } }
           >
             <h1 className="font-heading font-bold text-5xl md:text-6xl lg:text-8xl mb-6 leading-tight tracking-tighter text-white">
-              I Build <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-blue-600 to-purple-500 inline-block animate-gradient">Professional Websites</span> for Small Businesses
+              Hi, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-blue-600 to-purple-500 inline-block animate-gradient">Rizwan Riyaz</span>
             </h1>
           </motion.div>
           
@@ -64,7 +64,7 @@ const Hero = () => {
             animate={ { opacity: 1, y: 0 } }
             transition={ { delay: 0.4, duration: 0.6 } }
           >
-            Helping brands that don't have an online presence yet get found on Google and receive more inquiries.
+            Web Designer <span className="text-blue-500 mx-2 hidden sm:inline">|</span> <br className="sm:hidden" /> Digital Marketing & Social Media Manager <span className="text-blue-500 mx-2 hidden sm:inline">|</span> <br className="sm:hidden" /> Certified in Google Digital Marketing & E-Commerce
           </motion.h2>
           
           <motion.p 
@@ -73,7 +73,7 @@ const Hero = () => {
             animate={ { opacity: 1, y: 0 } }
             transition={ { delay: 0.6, duration: 0.6 } }
           >
-            Certified in Google Digital Marketing & E-Commerce | Web Designer | Digital Marketing Specialist
+            Turning creative ideas into professional digital experiences. Let's work together to bring your vision to life!
           </motion.p>
           
           <motion.div 
