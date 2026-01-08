@@ -63,9 +63,7 @@ const Contact = () => {
       window.open(gmailUrl, '_blank');
       
       // Also save to database for record keeping
-      const apiEndpoint = import.meta.env.DEV 
-        ? '/api/contact' 
-        : '/.netlify/functions/contactform';
+      const apiEndpoint = '/api/contact';
         
       await fetch(apiEndpoint, {
         method: 'POST',

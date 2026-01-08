@@ -39,7 +39,7 @@ Preferred communication style: Simple, everyday language.
 
 ### Deployment Options
 - **Primary**: Replit with Express serving static files in production
-- **Alternative**: Netlify deployment supported with serverless functions for contact form
+- **Alternative**: Vercel deployment supported
 
 ## External Dependencies
 
