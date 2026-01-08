@@ -1,6 +1,8 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 
+import Firefly_20240209032903 from "@assets/Firefly 20240209032903.png";
+
 const Hero = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
@@ -142,7 +144,7 @@ const Hero = () => {
             <div className="relative group">
               <div className="absolute inset-0 bg-primary/20 rounded-full blur-2xl group-hover:bg-primary/30 transition-colors -z-10"></div>
               <img 
-                src="https://images.unsplash.com/photo-1600486913747-55e5470d6f40?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" 
+                src={Firefly_20240209032903} 
                 alt="Rizwan Riyaz" 
                 className="w-64 h-64 md:w-80 md:h-80 object-cover rounded-full border-8 border-[#1a1a1e] shadow-[0_0_50px_rgba(59,130,246,0.3)] z-10 relative grayscale hover:grayscale-0 transition-all duration-700"
               />
