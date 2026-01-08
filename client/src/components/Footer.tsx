@@ -68,7 +68,7 @@ const Footer = () => {
                 <i className="fab fa-facebook-f"></i>
               </a>
               <a 
-                href="https://www.instagram.com/_.rizwanachu123._?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" 
+                href="https://www.instagram.com/_.rizwanachu._" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="w-10 h-10 bg-gray-800 hover:bg-primary rounded-full flex items-center justify-center transition-colors"

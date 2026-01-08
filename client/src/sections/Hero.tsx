@@ -110,7 +110,7 @@ const Hero = () => {
             {[
               { href: "https://www.linkedin.com/in/rizwanriyaz321", icon: "fab fa-linkedin", label: "LinkedIn" },
               { href: "https://www.facebook.com/rizwanachoo123", icon: "fab fa-facebook", label: "Facebook" },
-              { href: "https://www.instagram.com/_.rizwanachu123._?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==", icon: "fab fa-instagram", label: "Instagram" }
+              { href: "https://www.instagram.com/_.rizwanachu._", icon: "fab fa-instagram", label: "Instagram" }
             ].map((social, i) => (
               <motion.a 
                 key={i}
