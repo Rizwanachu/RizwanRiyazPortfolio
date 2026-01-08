@@ -71,7 +71,7 @@ const Resume = () => {
             >
               <Button className="px-10 py-6 bg-blue-600 text-white font-bold rounded-2xl hover:bg-blue-700 transition-all shadow-[0_0_30px_rgba(37,99,235,0.3)] flex items-center gap-3 border border-blue-400/20 uppercase tracking-widest text-xs">
                 <a href={resumePdfPath} download="RIZWAN_RIYAZ_RESUME_2026.pdf" className="text-white flex items-center">
-                  <i className="fas fa-download mr-2"></i> Download Dossier
+                  <i className="fas fa-download mr-2"></i> DOWNLOAD RESUME
                 </a>
               </Button>
             </motion.div>
