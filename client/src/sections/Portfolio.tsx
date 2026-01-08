@@ -92,15 +92,25 @@ const Portfolio = () => {
                 <div className="p-8">
                   <h3 className="font-heading font-semibold text-2xl mb-3 text-white tracking-tight">{project.title}</h3>
                   <p className="text-gray-400 text-base mb-6 font-light line-clamp-2 leading-relaxed">{project.description}</p>
-                  <div className="flex flex-wrap gap-3">
-                    {project.tags.map((tag, index) => (
-                      <span 
-                        key={index} 
-                        className="px-4 py-1.5 bg-blue-500/10 text-blue-400 border border-blue-500/20 rounded-lg text-xs font-medium uppercase tracking-widest"
-                      >
-                        {tag}
-                      </span>
-                    ))}
+                  <div className="flex items-center justify-between gap-4 mb-6">
+                    <div className="flex flex-wrap gap-2">
+                      {project.tags.slice(0, 2).map((tag, index) => (
+                        <span 
+                          key={index} 
+                          className="px-3 py-1 bg-blue-500/5 text-blue-400/70 border border-blue-500/10 rounded-lg text-[10px] font-medium uppercase tracking-widest"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                    <a 
+                      href={project.link || "#contact"} 
+                      target={project.link ? "_blank" : "_self"}
+                      rel="noopener noreferrer"
+                      className="text-white text-xs font-bold uppercase tracking-[0.2em] flex items-center gap-2 group/btn hover:text-blue-400 transition-colors"
+                    >
+                      Explore <i className="fas fa-arrow-right text-[10px] group-hover/btn:translate-x-1 transition-transform"></i>
+                    </a>
                   </div>
                 </div>
               </motion.div>
