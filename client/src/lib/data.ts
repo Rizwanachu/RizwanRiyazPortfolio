@@ -31,16 +31,6 @@ export const projects: Project[] = [
     categories: ['Web Design'],
     tags: ['FinTech', 'Tool'],
     link: 'https://spendorytrack.com'
-  },
-  {
-    id: 4,
-    title: 'Elmo Blog Website',
-    description: 'A blog website built using AI with clean design and content organization.',
-    image: 'https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80',
-    technologies: 'AI Website Builder, Hocoos',
-    categories: ['Web Design', 'Content Creation'],
-    tags: ['Blog', 'AI'],
-    link: 'https://elmo9671.hocoos.com/'
   }
 ];
 
