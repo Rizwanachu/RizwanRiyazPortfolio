@@ -88,29 +88,31 @@ const Portfolio = () => {
                     className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 grayscale group-hover:grayscale-0"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0c] via-transparent to-transparent opacity-60 group-hover:opacity-20 transition-opacity"></div>
-                </div>
-                <div className="p-8">
-                  <h3 className="font-heading font-semibold text-2xl mb-3 text-white tracking-tight">{project.title}</h3>
-                  <p className="text-gray-400 text-base mb-6 font-light line-clamp-2 leading-relaxed">{project.description}</p>
-                  <div className="flex items-center justify-between gap-4 mb-6">
-                    <div className="flex flex-wrap gap-2">
-                      {project.tags.slice(0, 2).map((tag, index) => (
-                        <span 
-                          key={index} 
-                          className="px-3 py-1 bg-blue-500/5 text-blue-400/70 border border-blue-500/10 rounded-lg text-[10px] font-medium uppercase tracking-widest"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
+                  
+                  {/* Explore Button Overlay */}
+                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 scale-90 group-hover:scale-100">
                     <a 
                       href={project.link || "#contact"} 
                       target={project.link ? "_blank" : "_self"}
                       rel="noopener noreferrer"
-                      className="text-white text-xs font-bold uppercase tracking-[0.2em] flex items-center gap-2 group/btn hover:text-blue-400 transition-colors"
+                      className="px-8 py-3 bg-white text-black font-bold text-xs uppercase tracking-[0.2em] rounded-full hover:bg-blue-500 hover:text-white transition-all shadow-xl"
                     >
-                      Explore <i className="fas fa-arrow-right text-[10px] group-hover/btn:translate-x-1 transition-transform"></i>
+                      Explore
                     </a>
+                  </div>
+                </div>
+                <div className="p-8">
+                  <h3 className="font-heading font-semibold text-2xl mb-3 text-white tracking-tight">{project.title}</h3>
+                  <p className="text-gray-400 text-base mb-6 font-light line-clamp-2 leading-relaxed">{project.description}</p>
+                  <div className="flex flex-wrap gap-2">
+                    {project.tags.slice(0, 3).map((tag, index) => (
+                      <span 
+                        key={index} 
+                        className="px-3 py-1 bg-blue-500/5 text-blue-400/70 border border-blue-500/10 rounded-lg text-[10px] font-medium uppercase tracking-widest"
+                      >
+                        {tag}
+                      </span>
+                    ))}
                   </div>
                 </div>
               </motion.div>
