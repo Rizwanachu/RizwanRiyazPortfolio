@@ -1,0 +1,152 @@
+// server/index.ts
+import express2 from "express";
+
+// server/routes.ts
+import { createServer } from "http";
+
+// server/storage.ts
+var MemStorage = class {
+  users;
+  contactSubmissions;
+  userCurrentId;
+  contactCurrentId;
+  constructor() {
+    this.users = /* @__PURE__ */ new Map();
+    this.contactSubmissions = /* @__PURE__ */ new Map();
+    this.userCurrentId = 1;
+    this.contactCurrentId = 1;
+  }
+  async getUser(id) {
+    return this.users.get(id);
+  }
+  async getUserByUsername(username) {
+    return Array.from(this.users.values()).find(
+      (user) => user.username === username
+    );
+  }
+  async createUser(insertUser) {
+    const id = this.userCurrentId++;
+    const user = { ...insertUser, id };
+    this.users.set(id, user);
+    return user;
+  }
+  // Contact form methods implementation
+  async saveContactSubmission(submission) {
+    const id = this.contactCurrentId++;
+    const now = /* @__PURE__ */ new Date();
+    const contactSubmission = {
+      ...submission,
+      id,
+      createdAt: now,
+      isRead: false
+    };
+    this.contactSubmissions.set(id, contactSubmission);
+    return contactSubmission;
+  }
+  async getContactSubmissions() {
+    return Array.from(this.contactSubmissions.values()).sort((a, b) => b.createdAt.getTime() - a.createdAt.getTime());
+  }
+  async getContactSubmission(id) {
+    return this.contactSubmissions.get(id);
+  }
+  async markContactSubmissionAsRead(id) {
+    const submission = this.contactSubmissions.get(id);
+    if (submission) {
+      const updatedSubmission = {
+        ...submission,
+        isRead: true
+      };
+      this.contactSubmissions.set(id, updatedSubmission);
+      return updatedSubmission;
+    }
+    return void 0;
+  }
+};
+var storage = new MemStorage();
+
+// shared/schema.ts
+import { pgTable, text, serial, boolean, timestamp } from "drizzle-orm/pg-core";
+import { createInsertSchema } from "drizzle-zod";
+import { z } from "zod";
+var users = pgTable("users", {
+  id: serial("id").primaryKey(),
+  username: text("username").notNull().unique(),
+  password: text("password").notNull()
+});
+var insertUserSchema = createInsertSchema(users).pick({
+  username: true,
+  password: true
+});
+var contactSubmissions = pgTable("contact_submissions", {
+  id: serial("id").primaryKey(),
+  name: text("name").notNull(),
+  email: text("email").notNull(),
+  subject: text("subject").notNull(),
+  message: text("message").notNull(),
+  createdAt: timestamp("created_at").defaultNow().notNull(),
+  isRead: boolean("is_read").default(false).notNull()
+});
+var contactFormSchema = z.object({
+  name: z.string().min(2, "Name must be at least 2 characters"),
+  email: z.string().email("Please enter a valid email address"),
+  subject: z.string().min(2, "Subject must be at least 2 characters"),
+  message: z.string().min(10, "Message must be at least 10 characters")
+});
+var insertContactSubmissionSchema = createInsertSchema(contactSubmissions).pick({
+  name: true,
+  email: true,
+  subject: true,
+  message: true
+});
+
+// server/routes.ts
+import { z as z2 } from "zod";
+import path from "path";
+import fs from "fs";
+import nodemailer from "nodemailer";
+async function registerRoutes(app2) {
+  const transporter = nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+      user: process.env.EMAIL_USER,
+      pass: process.env.EMAIL_PASS
+    }
+  });
+  app2.get("/api/resume", async (_req, res) => {
+    const filePath = path.resolve(process.cwd(), "attached_assets", "RIZWAN_RIYAZ_RESUME_2026_1767816929258.pdf");
+    if (fs.existsSync(filePath)) {
+      res.setHeader("Content-Type", "application/pdf");
+      res.setHeader("Content-Disposition", "attachment; filename=RIZWAN_RIYAZ_RESUME_2026.pdf");
+      fs.createReadStream(filePath).pipe(res);
+    } else {
+      res.status(404).send("Resume not found");
+    }
+  });
+  app2.post("/api/contact", async (req, res) => {
+    try {
+      const validatedData = contactFormSchema.parse(req.body);
+      await storage.saveContactSubmission(validatedData);
+      const mailOptions = {
+        from: process.env.EMAIL_USER,
+        to: "rizwanriyaz321@gmail.com",
+        subject: `New Contact Form Submission from ${validatedData.name}`,
+        text: `
+          Name: ${validatedData.name}
+          Email: ${validatedData.email}
+          Subject: ${validatedData.subject || "N/A"}
+          Message: ${validatedData.message}
+        `
+      };
+      if (process.env.EMAIL_USER && process.env.EMAIL_PASS) {
+        try {
+          await transporter.sendMail(mailOptions);
+          console.log("Email notification sent to rizwanriyaz321@gmail.com");
+        } catch (emailError) {
+          console.error("Failed to send email notification:", emailError);
+        }
+      } else {
+        console.warn("Email credentials not provided, skipping email notification");
+      }
+      res.status(200).json({
+        success: true,
+      ...
