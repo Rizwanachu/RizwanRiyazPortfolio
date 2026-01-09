@@ -15,7 +15,7 @@ export const projects: Project[] = [
   {
     id: 2,
     title: 'Glam Gustoz',
-    description: 'Official premium digital hub for the Glam Gustoz brand, featuring integrated e-commerce capabilities.',
+    description: 'Ecommerce brand website focused on trust, clean branding, and mobile-first design',
     image: 'https://images.unsplash.com/photo-1523381294911-8d3cead13475?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80',
     technologies: 'React, Node.js, Cloudflare',
     categories: ['Web Design', 'Digital Marketing'],
