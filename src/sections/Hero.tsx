@@ -64,7 +64,7 @@ const Hero = () => {
             animate={ { opacity: 1, y: 0 } }
             transition={ { delay: 0.4, duration: 0.6 } }
           >
-            Web Designer <span className="text-blue-500 mx-2 hidden sm:inline">|</span> <br className="sm:hidden" /> Digital Marketing & Social Media Manager <span className="text-blue-500 mx-2 hidden sm:inline">|</span> <br className="sm:hidden" /> Certified in Google Digital Marketing & E-Commerce
+            I help small businesses without websites get found on Google and get more inquiries
           </motion.h2>
           
           <motion.p 
@@ -73,7 +73,7 @@ const Hero = () => {
             animate={ { opacity: 1, y: 0 } }
             transition={ { delay: 0.6, duration: 0.6 } }
           >
-            Turning creative ideas into professional digital experiences. Let's work together to bring your vision to life!
+            Clean, professional websites built fast — no calls needed
           </motion.p>
           
           <motion.div 
