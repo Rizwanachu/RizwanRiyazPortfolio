@@ -4,7 +4,6 @@ import Footer from '@/components/Footer';
 import Hero from '@/sections/Hero';
 import About from '@/sections/About';
 import Portfolio from '@/sections/Portfolio';
-import Skills from '@/sections/Skills';
 import Shop from '@/sections/Shop';
 import Contact from '@/sections/Contact';
 
@@ -44,7 +43,6 @@ const Home = () => {
         <Hero />
         <About />
         <Portfolio />
-        <Skills />
         <Shop />
         <Contact />
       </main>
