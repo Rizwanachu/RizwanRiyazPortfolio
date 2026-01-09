@@ -68,9 +68,6 @@ const About = () => {
       icon: <Rocket className="w-8 h-8 text-emerald-500" />,
       content: (
         <div className="space-y-4">
-          <p className="text-gray-300">
-            I build simple, professional websites that work on mobile and turn visitors into inquiries.
-          </p>
           <ul className="space-y-2 text-sm text-gray-500 font-light">
             <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-emerald-500" /> Build trust in seconds</li>
             <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-emerald-500" /> Clearly explain your services</li>
