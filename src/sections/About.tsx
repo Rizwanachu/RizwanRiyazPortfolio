@@ -54,13 +54,11 @@ const About = () => {
       icon: <HelpCircle className="w-8 h-8 text-purple-500" />,
       content: (
         <div className="space-y-4">
-          <p className="text-gray-300">
-            People find you on Google, but there's nowhere to send them. You're losing trust before the first conversation.
-          </p>
           <ul className="space-y-2 text-sm text-gray-500 font-light">
+            <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-purple-500" /> People find you on Google, but there's nowhere to send them</li>
+            <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-purple-500" /> Losing trust before the first conversation</li>
             <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-purple-500" /> Relying only on calls or referrals</li>
             <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-purple-500" /> Competitors look more professional</li>
-            <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-purple-500" /> Losing trust before the first chat</li>
           </ul>
         </div>
       )
