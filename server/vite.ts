@@ -83,10 +83,14 @@ export function serveStatic(app: Express) {
     );
   }
 
-  app.use(express.static(distPath));
+  app.use(express.static(distPath, { index: false }));
 
   // fall through to index.html if the file doesn't exist
-  app.use("*", (_req, res) => {
+  app.use("*", (_req, res, next) => {
+    // Ensure we don't handle API routes here
+    if (_req.originalUrl.startsWith("/api")) {
+      return next();
+    }
     res.sendFile(indexPath);
   });
 }
