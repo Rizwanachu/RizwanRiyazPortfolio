@@ -7,7 +7,7 @@ import path from "path";
 import fs from "fs";
 import nodemailer from "nodemailer";
 
-export async function registerRoutes(app: Express): Promise<Server> {
+export async function registerRoutes(app: Express) {
   // Email transporter configuration
   const transporter = nodemailer.createTransport({
     service: 'gmail',
@@ -162,8 +162,4 @@ export async function registerRoutes(app: Express): Promise<Server> {
       });
     }
   });
-
-  const httpServer = createServer(app);
-
-  return httpServer;
 }
