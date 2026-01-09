@@ -46,6 +46,10 @@ export default {
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
+      fontFamily: {
+        heading: ["Montserrat", "sans-serif"],
+        body: ["Poppins", "sans-serif"],
+      },
     },
   },
   plugins: [animate],

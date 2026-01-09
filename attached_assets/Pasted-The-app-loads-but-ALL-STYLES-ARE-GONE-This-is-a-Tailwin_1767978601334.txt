@@ -1,0 +1,86 @@
+The app loads but ALL STYLES ARE GONE.
+This is a Tailwind / CSS injection issue.
+
+IMPORTANT:
+- Take as much time as needed
+- Do not stop
+- Do not ask to upgrade or use an autonomous agent
+- Apply fixes directly and completely
+
+GOAL:
+Restore the FULL original design while keeping the frontend-only Vite + Vercel setup intact.
+
+====================================================
+STEP 1 — VERIFY TAILWIND FILES EXIST
+====================================================
+Ensure these files exist and are correct:
+- tailwind.config.ts
+- postcss.config.js (or .cjs)
+- src/index.css (or src/main.css)
+
+If any are missing, CREATE them properly.
+
+====================================================
+STEP 2 — FIX tailwind.config.ts (CRITICAL)
+====================================================
+Ensure content paths include ALL frontend files:
+
+content MUST include:
+- "./index.html"
+- "./src/**/*.{js,ts,jsx,tsx}"
+
+No server paths.
+No client paths.
+No old folders.
+
+====================================================
+STEP 3 — FIX src/index.css
+====================================================
+Ensure it contains EXACTLY:
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+No missing directives.
+
+====================================================
+STEP 4 — FIX src/main.tsx (MOST LIKELY BROKEN)
+====================================================
+Ensure the CSS file is IMPORTED at the TOP:
+
+import "./index.css";
+
+Without this, Tailwind will NEVER load.
+
+====================================================
+STEP 5 — VERIFY VITE BUILD PIPELINE
+====================================================
+Ensure:
+- vite.config.ts has NO custom CSS handling
+- No PostCSS overrides
+- No removed plugins
+- Tailwind plugin is intact
+
+====================================================
+STEP 6 — FINAL VERIFICATION
+====================================================
+Confirm ALL of the following:
+- npm run dev shows full styling
+- Headings, spacing, fonts, layout restored
+- npm run build succeeds
+- dist/assets contains CSS file
+- Vercel will serve styled site
+
+====================================================
+FINAL OUTPUT REQUIRED:
+====================================================
+1) Confirm Tailwind is correctly wired
+2) Show fixed tailwind.config.ts
+3) Show fixed src/main.tsx
+4) Show fixed CSS file
+5) Confirm design is restored
+
+Do not stop early.
+Do not leave styling broken.
+Deliver the fully styled site.
