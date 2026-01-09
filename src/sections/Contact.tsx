@@ -48,43 +48,32 @@ const Contact = () => {
     setIsSubmitting(true);
     
     try {
-      // Create Gmail mailto link
+      // Create mailto link
       const emailTo = 'rizwanriyaz321@gmail.com';
-      const subject = encodeURIComponent(data.subject || `New Message from ${data.name}`);
+      const subject = encodeURIComponent(data.subject);
       const body = encodeURIComponent(
         `Name: ${data.name}\n` +
         `Email: ${data.email}\n\n` +
         `Message:\n${data.message}`
       );
       
-      const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${emailTo}&su=${subject}&body=${body}`;
+      const mailtoUrl = `mailto:${emailTo}?subject=${subject}&body=${body}`;
       
-      // Open Gmail in a new tab
-      window.open(gmailUrl, '_blank');
-      
-      // Also save to database for record keeping
-      const apiEndpoint = '/api/contact';
-        
-      await fetch(apiEndpoint, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-      });
+      // Open the user's default email client
+      window.location.href = mailtoUrl;
       
       toast({
-        title: 'Draft Created!',
-        description: 'Opening Gmail with your message details...',
+        title: 'Email client opened!',
+        description: 'Your default email client has been opened with your message.',
       });
       
       form.reset();
     } catch (error) {
-      console.error('Error sending message:', error);
+      console.error('Error opening email client:', error);
       
       toast({
         title: 'Error',
-        description: 'There was a problem processing your request.',
+        description: 'There was a problem opening your email client.',
         variant: 'destructive',
       });
     } finally {
