@@ -1,0 +1,133 @@
+There is still backend dev middleware running and it MUST be fully removed.
+
+IMPORTANT:
+- Take as much time as needed.
+- Do not stop.
+- Do not ask me to upgrade or use an autonomous agent.
+- Apply fixes directly.
+- Finish with a working Replit preview AND Vercel deployment.
+
+CURRENT ERROR (CRITICAL):
+ENOENT: no such file or directory, open '/home/runner/workspace/client/index.html'
+→ This proves server/vite.ts is still being executed
+→ This file must NOT exist in a frontend-only Vite project
+
+====================================================
+STEP 1 — HARD DELETE ALL BACKEND FILES (MANDATORY)
+====================================================
+DELETE COMPLETELY:
+- server/
+- server/vite.ts
+- any Express setup
+- any middleware that reads index.html manually
+- any reference to /client
+- any Node server startup logic
+
+AFTER THIS STEP:
+- There must be NO server folder
+- There must be NO code that reads HTML using fs
+- There must be NO backend runtime in dev or prod
+
+====================================================
+STEP 2 — FIX REPLIT ENTRYPOINT (CRITICAL)
+====================================================
+Open `.replit` and ENSURE:
+
+- run command uses ONLY:
+  npm run dev
+
+- There is NO reference to:
+  node
+  tsx
+  server files
+  custom runners
+
+Replit must start ONLY the Vite dev server.
+
+====================================================
+STEP 3 — VERIFY PROJECT STRUCTURE (STRICT)
+====================================================
+Final structure MUST be:
+
+/
+├── index.html
+├── src/
+├── public/
+├── dist/
+├── vite.config.ts
+├── package.json
+├── vercel.json
+└── .replit
+
+NO client/
+NO server/
+NO shared/
+NO backend folders
+
+====================================================
+STEP 4 — FIX vite.config.ts (REQUIRED)
+====================================================
+Ensure:
+- root is project root
+- base: "/"
+- build.outDir = "dist"
+- NO custom server logic
+- NO middleware
+- NO fs access
+
+====================================================
+STEP 5 — FIX package.json (FINAL)
+====================================================
+Scripts MUST be EXACTLY:
+
+{
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  }
+}
+
+REMOVE:
+- start
+- esbuild
+- server builds
+- anything backend-related
+
+====================================================
+STEP 6 — CONFIRM vercel.json (FINAL)
+====================================================
+Ensure vercel.json is EXACTLY:
+
+{
+  "framework": "vite",
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "routes": [
+    { "handle": "filesystem" },
+    { "src": "/(.*)", "dest": "/index.html" }
+  ]
+}
+
+====================================================
+STEP 7 — FINAL VERIFICATION (DO NOT SKIP)
+====================================================
+Confirm ALL of the following:
+- Replit Preview loads without ENOENT
+- npm run dev works
+- npm run build outputs dist/index.html
+- Vercel serves /
+- Page refresh does NOT 404
+- No backend code is executed anywhere
+
+====================================================
+FINAL OUTPUT REQUIRED:
+====================================================
+1) Confirm server code is fully removed
+2) Show final folder structure
+3) Confirm Replit preview works
+4) Confirm Vercel deployment will work
+
+Do not stop early.
+Do not leave dead code.
+Deliver a clean frontend-only Vite app.
