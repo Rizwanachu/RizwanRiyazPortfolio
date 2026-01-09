@@ -1,0 +1,148 @@
+I need you to COMPLETELY FIX this project so it WORKS on Vercel.
+The build already succeeds, but the deployed site is BLANK / 404.
+This is a routing + output + vercel configuration failure.
+
+CRITICAL INSTRUCTIONS:
+- Take as much time as needed.
+- Do not stop midway.
+- Do not ask me to upgrade or switch to an autonomous agent.
+- Audit EVERY file, folder, and config.
+- Make decisions and APPLY them.
+- End with a deployable, working app.
+
+CURRENT FACTS (DO NOT IGNORE):
+- Vite build succeeds
+- dist/public/index.html IS GENERATED
+- dist/server/index.js IS GENERATED
+- Vercel deploys without errors
+- Visiting the URL shows a blank page / 404
+→ This means Vercel has NO valid route or output mapping.
+
+====================================================
+STEP 1 — DECIDE THE CORRECT ARCHITECTURE (MANDATORY)
+====================================================
+This is a PERSONAL PORTFOLIO SITE.
+CHOOSE:
+✅ FRONTEND-ONLY VITE STATIC SITE
+
+THEREFORE:
+- Express server is NOT needed on Vercel
+- server/index.ts must NOT be used
+- dist/server must NOT exist
+- No Node server should handle routing
+
+DELETE ALL FULLSTACK ASSUMPTIONS.
+
+====================================================
+STEP 2 — CLEAN THE PROJECT (STRICT)
+====================================================
+REMOVE completely:
+- server/
+- shared/ (if only server-related)
+- esbuild server build step
+- Any Express code
+- Any API routes
+- Any Replit-specific logic
+- Any Node runtime assumptions
+
+AFTER CLEANUP, ONLY THESE SHOULD MATTER:
+- index.html
+- src/
+- public/
+- vite.config.ts
+- package.json
+- vercel.json
+
+====================================================
+STEP 3 — FIX vite.config.ts (CRITICAL)
+====================================================
+Ensure:
+- root is correct
+- base: "/"
+- build.outDir = "dist"
+- build.emptyOutDir = true
+
+Vite MUST output:
+dist/
+├── index.html
+├── assets/
+
+NOT dist/public
+NOT nested folders
+
+====================================================
+STEP 4 — FIX package.json (MANDATORY)
+====================================================
+SCRIPTS MUST BE EXACTLY:
+
+{
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  }
+}
+
+REMOVE:
+- esbuild
+- server build
+- start scripts
+- nodemon
+- tsx
+- anything backend-related
+
+====================================================
+STEP 5 — FIX index.html (REQUIRED)
+====================================================
+- index.html MUST be at project root
+- Script tag MUST point to /src/main.tsx
+- No relative path mistakes
+- No server paths
+- No base tag issues
+
+====================================================
+STEP 6 — CREATE vercel.json (THIS IS THE ROOT CAUSE)
+====================================================
+CREATE THIS FILE EXACTLY:
+
+{
+  "framework": "vite",
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "routes": [
+    { "handle": "filesystem" },
+    { "src": "/(.*)", "dest": "/index.html" }
+  ]
+}
+
+THIS TELLS VERCEL:
+- Where the built site lives
+- How to serve SPA routes
+- What to load at /
+
+====================================================
+STEP 7 — FINAL VERIFICATION (DO NOT SKIP)
+====================================================
+CONFIRM ALL OF THESE:
+- npm run build produces dist/index.html
+- dist/index.html exists at root of dist
+- No dist/public folder
+- No server output
+- No Express
+- No backend
+- Visiting / loads the site
+- Refreshing routes does NOT 404
+
+====================================================
+FINAL OUTPUT REQUIRED:
+====================================================
+1) Confirm frontend-only architecture
+2) Show final folder structure
+3) Show final vite.config.ts
+4) Show final package.json
+5) Show final vercel.json
+6) State clearly: "This will work on Vercel"
+
+Do not leave anything unresolved.
+Do not give advice without applying fixes.
+Deliver a working deployment.
