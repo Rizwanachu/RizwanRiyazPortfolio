@@ -48,7 +48,6 @@ const Contact = () => {
     setIsSubmitting(true);
     
     try {
-      // Create Gmail compose link directly
       const emailTo = 'rizwanriyaz321@gmail.com';
       const subject = encodeURIComponent(data.subject);
       const body = encodeURIComponent(
@@ -57,23 +56,42 @@ const Contact = () => {
         `Message:\n${data.message}`
       );
       
+      const mailtoUrl = `mailto:${emailTo}?subject=${subject}&body=${body}`;
       const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${emailTo}&su=${subject}&body=${body}`;
       
-      // Open Gmail in a new tab
-      window.open(gmailUrl, '_blank');
+      // Detect mobile device
+      const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
       
-      toast({
-        title: 'Opening Gmail...',
-        description: 'A new tab has been opened to compose your email.',
-      });
+      if (isMobile) {
+        // On mobile, try mailto link first to open native app
+        const link = document.createElement('a');
+        link.href = mailtoUrl;
+        link.target = '_self';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        
+        toast({
+          title: 'Opening Email App...',
+          description: 'Your mobile email app should open now.',
+        });
+      } else {
+        // On desktop, Gmail web is more reliable as per user's previous issue
+        window.open(gmailUrl, '_blank');
+        
+        toast({
+          title: 'Opening Gmail...',
+          description: 'A new tab has been opened to compose your email.',
+        });
+      }
       
       form.reset();
     } catch (error) {
-      console.error('Error opening Gmail:', error);
+      console.error('Error sending email:', error);
       
       toast({
         title: 'Error',
-        description: 'There was a problem opening Gmail.',
+        description: 'There was a problem opening your email app.',
         variant: 'destructive',
       });
     } finally {
