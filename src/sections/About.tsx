@@ -40,9 +40,6 @@ const About = () => {
       icon: <Target className="w-8 h-8 text-blue-500" />,
       content: (
         <div className="space-y-4">
-          <p className="text-gray-300">
-            Consulting firms, wellness centers, and service businesses ready to scale their digital presence.
-          </p>
           <ul className="space-y-2 text-sm text-gray-500 font-light">
             <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-blue-500" /> Consulting firms</li>
             <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-blue-500" /> Wellness centers</li>
