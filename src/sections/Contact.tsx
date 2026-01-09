@@ -136,8 +136,8 @@ const Contact = () => {
               
               <div className="space-y-10">
                 <div className="flex items-start group">
-                  <div className="w-14 h-14 bg-blue-600/10 text-blue-400 rounded-2xl flex items-center justify-center mr-6 shrink-0 border border-blue-500/10 group-hover:bg-blue-600 group-hover:text-white transition-all duration-500">
-                    <i className="fas fa-envelope text-xl"></i>
+                  <div className="w-12 h-12 bg-blue-600/10 text-blue-400 rounded-full flex items-center justify-center mr-4 shrink-0 border border-blue-500/10 group-hover:bg-blue-600 group-hover:text-white transition-all duration-500">
+                    <i className="fas fa-envelope text-lg"></i>
                   </div>
                   <div>
                     <h4 className="font-medium text-lg mb-1 text-gray-300">Email</h4>
@@ -147,22 +147,22 @@ const Contact = () => {
                 
 
                 
-                <div className="flex items-start">
-                  <div className="w-12 h-12 bg-primary/10 text-primary rounded-full flex items-center justify-center mr-4 shrink-0">
-                    <i className="fas fa-map-marker-alt"></i>
+                <div className="flex items-start group">
+                  <div className="w-12 h-12 bg-blue-600/10 text-blue-400 rounded-full flex items-center justify-center mr-4 shrink-0 border border-blue-500/10 group-hover:bg-blue-600 group-hover:text-white transition-all duration-500">
+                    <i className="fas fa-map-marker-alt text-lg"></i>
                   </div>
                   <div>
-                    <h4 className="font-medium text-lg mb-1">Location</h4>
-                    <p className="text-gray-700">Kochi, Kerala, India</p>
+                    <h4 className="font-medium text-lg mb-1 text-gray-300">Location</h4>
+                    <p className="text-gray-500 font-light">Kochi, Kerala, India</p>
                   </div>
                 </div>
                 
-                <div className="flex items-start">
-                  <div className="w-12 h-12 bg-primary/10 text-primary rounded-full flex items-center justify-center mr-4 shrink-0">
-                    <i className="fas fa-globe"></i>
+                <div className="flex items-start group">
+                  <div className="w-12 h-12 bg-blue-600/10 text-blue-400 rounded-full flex items-center justify-center mr-4 shrink-0 border border-blue-500/10 group-hover:bg-blue-600 group-hover:text-white transition-all duration-500">
+                    <i className="fas fa-globe text-lg"></i>
                   </div>
                   <div>
-                    <h4 className="font-medium text-lg mb-1">Social Media</h4>
+                    <h4 className="font-medium text-lg mb-1 text-gray-300">Social Media</h4>
                     <div className="flex space-x-4 mt-2">
                       <a 
                         href="https://www.linkedin.com/in/rizwanriyaz321" 
