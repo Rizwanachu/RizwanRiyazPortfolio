@@ -1,0 +1,124 @@
+I need you to FULLY AUDIT and FIX my entire project so it deploys correctly on Vercel with ZERO 404 errors.
+
+CURRENT PROBLEM:
+- Deployed on Vercel
+- URL shows "404: NOT_FOUND"
+- Build may succeed but nothing is served
+- This means Vercel has NO valid entry point
+
+YOUR TASK (DO NOT SKIP ANY STEP):
+
+STEP 1 — PROJECT TYPE DECISION (CRITICAL)
+- Determine if this project is:
+  A) Frontend-only (React/Vite)
+  B) Fullstack (React + Express API)
+- Choose ONE correct deployment strategy
+- REMOVE all unused configs for the other strategy
+
+STEP 2 — FOLDER STRUCTURE (MANDATORY)
+Enforce ONE of these structures:
+
+OPTION A — FRONTEND ONLY (RECOMMENDED FOR PORTFOLIO)
+/
+├── index.html
+├── vite.config.ts
+├── src/
+├── public/
+├── package.json
+└── vercel.json
+
+OPTION B — FULLSTACK (ONLY IF API IS REQUIRED)
+/
+├── client/
+│   ├── index.html
+│   └── src/
+├── server/
+│   └── index.ts
+├── package.json
+└── vercel.json
+
+DELETE any extra /dist confusion that Vercel cannot infer.
+
+STEP 3 — package.json (STRICT)
+Fix scripts EXACTLY depending on type:
+
+FRONTEND ONLY:
+{
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  }
+}
+
+FULLSTACK:
+{
+  "scripts": {
+    "build": "vite build",
+    "start": "node server/index.js"
+  }
+}
+
+NO tsx
+NO nodemon
+NO dev servers in production
+
+STEP 4 — vite.config.ts (REQUIRED)
+- Ensure correct root
+- Ensure correct build.outDir
+- Ensure base: "/"
+- Ensure index.html is correctly referenced
+
+STEP 5 — index.html (CRITICAL)
+- MUST exist at the expected root
+- MUST reference /src/main.tsx correctly
+- NO relative path mistakes
+
+STEP 6 — vercel.json (THIS IS WHY YOU GET 404)
+CREATE OR FIX vercel.json EXACTLY:
+
+FRONTEND ONLY:
+{
+  "builds": [
+    { "src": "package.json", "use": "@vercel/static-build" }
+  ],
+  "routes": [
+    { "src": "/(.*)", "dest": "/" }
+  ]
+}
+
+FULLSTACK:
+{
+  "version": 2,
+  "builds": [
+    { "src": "server/index.ts", "use": "@vercel/node" }
+  ],
+  "routes": [
+    { "src": "/(.*)", "dest": "server/index.ts" }
+  ]
+}
+
+STEP 7 — REMOVE ALL PLATFORM-SPECIFIC CODE
+DELETE anything related to:
+- Replit run commands
+- process.env.PORT for frontend-only
+- Express static serving if frontend-only
+- Any leftover Netlify/Replit config
+
+STEP 8 — VERIFY LOCALLY
+- `npm run build` must produce output
+- Vercel must know EXACTLY what to serve
+- Visiting `/` must load index.html
+- No blank page
+- No platform 404
+
+FINAL OUTPUT REQUIRED:
+- Tell me which project type you chose
+- Show final folder structure
+- Show final package.json
+- Show final vercel.json
+- Confirm the app WILL load at root URL
+
+DO NOT GUESS.
+DO NOT LEAVE PARTIAL FIXES.
+MAKE IT DEPLOY-READY.
