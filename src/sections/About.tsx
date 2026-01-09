@@ -1,7 +1,7 @@
 import { useRef, useEffect } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
-import { CheckCircle2, Target, HelpCircle, Rocket } from 'lucide-react';
+import { Target, HelpCircle, Rocket } from 'lucide-react';
 
 const About = () => {
   const controls = useAnimation();
@@ -38,43 +38,34 @@ const About = () => {
     {
       title: "Who I Help",
       icon: <Target className="w-8 h-8 text-blue-500" />,
-      content: (
-        <div className="space-y-4">
-          <ul className="space-y-2 text-sm text-gray-500 font-light">
-            <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-blue-500" /> Consulting firms</li>
-            <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-blue-500" /> Wellness centers</li>
-            <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-blue-500" /> Service businesses without a website</li>
-            <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-blue-500" /> Businesses losing online leads</li>
-          </ul>
-        </div>
-      )
+      color: "blue",
+      items: [
+        "Consulting firms",
+        "Wellness centers",
+        "Service businesses without a website",
+        "Businesses losing online leads"
+      ]
     },
     {
       title: "The Problem",
       icon: <HelpCircle className="w-8 h-8 text-purple-500" />,
-      content: (
-        <div className="space-y-4">
-          <ul className="space-y-2 text-sm text-gray-500 font-light">
-            <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-purple-500" /> People find you on Google, but there's nowhere to send them</li>
-            <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-purple-500" /> Losing trust before the first conversation</li>
-            <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-purple-500" /> Relying only on calls or referrals</li>
-            <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-purple-500" /> Competitors look more professional</li>
-          </ul>
-        </div>
-      )
+      color: "purple",
+      items: [
+        "People find you on Google, but there's nowhere to send them",
+        "Losing trust before the first conversation",
+        "Relying only on calls or referrals",
+        "Competitors look more professional"
+      ]
     },
     {
       title: "My Solution",
       icon: <Rocket className="w-8 h-8 text-emerald-500" />,
-      content: (
-        <div className="space-y-4">
-          <ul className="space-y-2 text-sm text-gray-500 font-light">
-            <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-emerald-500" /> Build trust in seconds</li>
-            <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-emerald-500" /> Clearly explain your services</li>
-            <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-emerald-500" /> Turn visitors into inquiries</li>
-          </ul>
-        </div>
-      )
+      color: "emerald",
+      items: [
+        "Build trust in seconds",
+        "Clearly explain your services",
+        "Turn visitors into inquiries"
+      ]
     }
   ];
 
@@ -102,13 +93,23 @@ const About = () => {
               <motion.div
                 key={idx}
                 variants={itemVariants}
-                className="glass-morphism p-8 rounded-3xl border border-white/5 hover:border-white/10 transition-all duration-500 group"
+                className="glass-morphism p-8 rounded-3xl border border-white/5 hover:border-white/10 transition-all duration-500 group flex flex-col h-full"
               >
                 <div className="mb-6 p-3 bg-white/5 rounded-2xl w-fit group-hover:scale-110 transition-transform duration-500">
                   {card.icon}
                 </div>
-                <h3 className="text-2xl font-heading font-semibold text-white mb-4 tracking-tight">{card.title}</h3>
-                {card.content}
+                <h3 className="text-2xl font-heading font-semibold text-white mb-6 tracking-tight">{card.title}</h3>
+                <ul className="space-y-4 flex-grow">
+                  {card.items.map((item, i) => (
+                    <li key={i} className="flex items-start gap-3 text-gray-400 text-sm leading-relaxed">
+                      <div className={`w-1.5 h-1.5 rounded-full mt-1.5 shrink-0 ${
+                        card.color === 'blue' ? 'bg-blue-500' : 
+                        card.color === 'purple' ? 'bg-purple-500' : 'bg-emerald-500'
+                      }`} />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
               </motion.div>
             ))}
           </div>
