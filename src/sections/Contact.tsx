@@ -60,7 +60,14 @@ const Contact = () => {
       const mailtoUrl = `mailto:${emailTo}?subject=${subject}&body=${body}`;
       
       // Open the user's default email client
-      window.location.href = mailtoUrl;
+      // Some browsers block window.location.href or window.open for mailto
+      // Creating a temporary link and clicking it is the most reliable way
+      const link = document.createElement('a');
+      link.href = mailtoUrl;
+      link.target = '_self'; // Ensure it doesn't open a new tab
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
       
       toast({
         title: 'Email client opened!',
