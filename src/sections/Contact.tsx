@@ -125,7 +125,8 @@ const Contact = () => {
             <h2 className="font-heading font-bold text-4xl md:text-5xl text-white mb-6 tracking-tight">Direct Access</h2>
             <div className="w-24 h-1.5 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto mb-10 rounded-full"></div>
             <p className="text-gray-500 max-w-2xl mx-auto text-lg font-light">
-              Ready to initiate a high-level digital collaboration? Reach out below.
+              Want to see how your business could look online?<br />
+              Email me and I’ll share a quick example.
             </p>
           </motion.div>
           
