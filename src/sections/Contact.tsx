@@ -48,7 +48,7 @@ const Contact = () => {
     setIsSubmitting(true);
     
     try {
-      // Create mailto link
+      // Create Gmail compose link directly
       const emailTo = 'rizwanriyaz321@gmail.com';
       const subject = encodeURIComponent(data.subject);
       const body = encodeURIComponent(
@@ -57,30 +57,23 @@ const Contact = () => {
         `Message:\n${data.message}`
       );
       
-      const mailtoUrl = `mailto:${emailTo}?subject=${subject}&body=${body}`;
+      const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${emailTo}&su=${subject}&body=${body}`;
       
-      // Open the user's default email client
-      // Some browsers block window.location.href or window.open for mailto
-      // Creating a temporary link and clicking it is the most reliable way
-      const link = document.createElement('a');
-      link.href = mailtoUrl;
-      link.target = '_self'; // Ensure it doesn't open a new tab
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
+      // Open Gmail in a new tab
+      window.open(gmailUrl, '_blank');
       
       toast({
-        title: 'Email client opened!',
-        description: 'Your default email client has been opened with your message.',
+        title: 'Opening Gmail...',
+        description: 'A new tab has been opened to compose your email.',
       });
       
       form.reset();
     } catch (error) {
-      console.error('Error opening email client:', error);
+      console.error('Error opening Gmail:', error);
       
       toast({
         title: 'Error',
-        description: 'There was a problem opening your email client.',
+        description: 'There was a problem opening Gmail.',
         variant: 'destructive',
       });
     } finally {
