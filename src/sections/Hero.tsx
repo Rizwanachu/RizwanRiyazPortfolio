@@ -1,7 +1,7 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 
-import Firefly_20240209032903 from "@assets/Firefly 20240209032903.png";
+import rizwanRiyazImage from "@assets/image_(3)_1768868471732.png";
 
 const Hero = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -143,7 +143,7 @@ const Hero = () => {
             <div className="relative group">
               <div className="absolute inset-0 bg-primary/20 rounded-full blur-2xl group-hover:bg-primary/30 transition-colors -z-10"></div>
               <img 
-                src={Firefly_20240209032903} 
+                src={rizwanRiyazImage} 
                 alt="Rizwan Riyaz" 
                 className="w-64 h-64 md:w-80 md:h-80 object-cover rounded-full border-8 border-[#1a1a1e] shadow-[0_0_50px_rgba(59,130,246,0.3)] z-10 relative grayscale hover:grayscale-0 transition-all duration-700"
               />
